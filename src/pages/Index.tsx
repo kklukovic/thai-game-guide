@@ -1,13 +1,17 @@
 import Header from "@/components/Header";
 import CasinoCard from "@/components/CasinoCard";
 import Footer from "@/components/Footer";
-import FloatingLineButton from "@/components/FloatingLineButton";
+import siam369Logo from "@/assets/siam369.png";
+import roll88Logo from "@/assets/roll88.png";
+import uea8Logo from "@/assets/uea8.png";
+import cloudbetLogo from "@/assets/cloudbet.jfif";
 
 const casinos = [
   {
     rank: 1,
     name: "Siam369",
     tagline: "The Local Giant",
+    logo: siam369Logo,
     badge: "อันดับ 1 ในไทย",
     badgeType: "rank1" as const,
     bonusInfo: "100% Welcome Bonus สูงสุด 3,000 THB",
@@ -25,6 +29,7 @@ const casinos = [
     rank: 2,
     name: "Roll88",
     tagline: "The Slot Expert",
+    logo: roll88Logo,
     badge: "5,000,000 THB Prize Pool!",
     badgeType: "event" as const,
     bonusInfo: "100% Slots Bonus + Daily Cash Rebates",
@@ -46,6 +51,7 @@ const casinos = [
     rank: 3,
     name: "UEA8",
     tagline: "The VIP Choice",
+    logo: uea8Logo,
     badge: "VIP Special Bonus",
     badgeType: "vip" as const,
     bonusInfo: "VIP Transfer Bonus สูงสุด 30,000 THB+",
@@ -63,6 +69,7 @@ const casinos = [
     rank: 4,
     name: "Cloudbet",
     tagline: "The Crypto King",
+    logo: cloudbetLogo,
     badge: "No KYC - 0x Wagering",
     badgeType: "crypto" as const,
     bonusInfo: "Welcome Package $2,500 (Real Cash) + 10% Rakeback",
@@ -93,8 +100,6 @@ const Index = () => {
 
         <Footer />
       </div>
-      
-      <FloatingLineButton />
     </div>
   );
 };
