@@ -5,6 +5,7 @@ interface CasinoCardProps {
   name: string;
   tagline: string;
   logo: string;
+  logoBgDark?: boolean;
   badge: string;
   badgeType: "rank1" | "deposit" | "vip" | "crypto" | "event";
   bonusInfo: string;
@@ -50,6 +51,7 @@ const CasinoCard = ({
   name,
   tagline,
   logo,
+  logoBgDark,
   badge,
   badgeType,
   bonusInfo,
@@ -85,7 +87,7 @@ const CasinoCard = ({
       <div className="flex items-start justify-between gap-4 mb-4">
         <div className="flex items-center gap-3">
           {/* Casino Logo */}
-          <div className="w-16 h-16 rounded-xl bg-muted/50 flex items-center justify-center overflow-hidden flex-shrink-0 border border-border">
+          <div className={`w-16 h-16 rounded-xl flex items-center justify-center overflow-hidden flex-shrink-0 border border-border ${logoBgDark ? 'bg-slate-900' : 'bg-muted/50'}`}>
             <img src={logo} alt={`${name} logo`} className="w-full h-full object-contain p-1" />
           </div>
           <div>
