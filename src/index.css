@@ -178,6 +178,18 @@
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
+  .badge-new {
+    background: linear-gradient(135deg, hsl(320 70% 50%), hsl(280 70% 55%));
+    color: hsl(0 0% 100%);
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .casino-card-featured {
+    @apply casino-card;
+    border: 2px solid hsl(320 70% 50%);
+    box-shadow: 0 4px 24px -4px hsl(320 70% 50% / 0.4);
+  }
+
   .badge-pim {
     background: linear-gradient(135deg, hsl(280 70% 55%), hsl(320 70% 50%));
     color: hsl(0 0% 100%);
