@@ -4,65 +4,67 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sarabun:wght@400;500;600;700&display=swap');
 
-/* Casino Affiliate Portal - Esports Insider Style
-   Dark, bold, professional with gold luxury accents */
+/* Casino Affiliate Portal - Professional Light Theme
+   Clean, authoritative, mobile-first with green CTAs */
 
 @layer base {
   :root {
-    /* Dark esports theme */
-    --background: 222 47% 6%;
-    --foreground: 210 40% 96%;
+    /* Light professional theme */
+    --background: 0 0% 98%;
+    --foreground: 222 47% 11%;
 
-    --card: 222 47% 9%;
-    --card-foreground: 210 40% 96%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
 
-    --popover: 222 47% 9%;
-    --popover-foreground: 210 40% 96%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
 
-    /* Gold/Amber primary - casino luxury */
-    --primary: 45 93% 47%;
-    --primary-foreground: 222 47% 6%;
+    /* Green primary for CTAs */
+    --primary: 142 70% 45%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Teal secondary - esports accent */
-    --secondary: 174 72% 46%;
-    --secondary-foreground: 222 47% 6%;
+    /* Gold accent for badges */
+    --secondary: 45 93% 47%;
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 222 30% 15%;
-    --muted-foreground: 215 20% 55%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
 
-    --accent: 174 72% 46%;
-    --accent-foreground: 222 47% 6%;
+    --accent: 45 93% 47%;
+    --accent-foreground: 222 47% 11%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 222 30% 18%;
-    --input: 222 30% 18%;
-    --ring: 45 93% 47%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 142 70% 45%;
 
     --radius: 0.75rem;
 
     /* Custom tokens */
+    --gradient-cta: linear-gradient(135deg, hsl(142 70% 45%), hsl(142 76% 36%));
     --gradient-gold: linear-gradient(135deg, hsl(45 93% 47%), hsl(35 93% 42%));
-    --gradient-card: linear-gradient(180deg, hsl(222 47% 11%), hsl(222 47% 7%));
-    --gradient-hero: linear-gradient(180deg, hsl(222 47% 8%) 0%, hsl(222 47% 4%) 100%);
-    --shadow-gold: 0 4px 24px -4px hsl(45 93% 47% / 0.25);
-    --shadow-card: 0 8px 32px -8px hsl(0 0% 0% / 0.5);
+    --gradient-hero: linear-gradient(180deg, hsl(220 14% 96%) 0%, hsl(0 0% 100%) 100%);
+    --shadow-card: 0 4px 20px -4px hsl(220 13% 91% / 0.8);
+    --shadow-cta: 0 4px 16px -4px hsl(142 70% 45% / 0.4);
+    --shadow-hover: 0 8px 30px -8px hsl(220 13% 70% / 0.3);
     
     /* Label colors */
     --label-local: 142 70% 45%;
     --label-slots: 280 70% 55%;
     --label-vip: 45 93% 47%;
     --label-crypto: 32 95% 50%;
+    --label-hot: 0 84% 60%;
 
-    --sidebar-background: 222 47% 6%;
-    --sidebar-foreground: 210 40% 96%;
-    --sidebar-primary: 45 93% 47%;
-    --sidebar-primary-foreground: 222 47% 6%;
-    --sidebar-accent: 222 30% 15%;
-    --sidebar-accent-foreground: 210 40% 96%;
-    --sidebar-border: 222 30% 18%;
-    --sidebar-ring: 45 93% 47%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 142 70% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 96%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 142 70% 45%;
   }
 
   .dark {
@@ -72,27 +74,27 @@
     --card-foreground: 210 40% 96%;
     --popover: 222 47% 9%;
     --popover-foreground: 210 40% 96%;
-    --primary: 45 93% 47%;
-    --primary-foreground: 222 47% 6%;
-    --secondary: 174 72% 46%;
-    --secondary-foreground: 222 47% 6%;
+    --primary: 142 70% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 45 93% 47%;
+    --secondary-foreground: 222 47% 11%;
     --muted: 222 30% 15%;
     --muted-foreground: 215 20% 55%;
-    --accent: 174 72% 46%;
+    --accent: 45 93% 47%;
     --accent-foreground: 222 47% 6%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
     --border: 222 30% 18%;
     --input: 222 30% 18%;
-    --ring: 45 93% 47%;
+    --ring: 142 70% 45%;
     --sidebar-background: 222 47% 6%;
     --sidebar-foreground: 210 40% 96%;
-    --sidebar-primary: 45 93% 47%;
-    --sidebar-primary-foreground: 222 47% 6%;
+    --sidebar-primary: 142 70% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 222 30% 15%;
     --sidebar-accent-foreground: 210 40% 96%;
     --sidebar-border: 222 30% 18%;
-    --sidebar-ring: 45 93% 47%;
+    --sidebar-ring: 142 70% 45%;
   }
 }
 
@@ -107,30 +109,34 @@
   }
 
   /* Thai text optimization */
-  .thai-text {
+  .font-thai {
     font-family: 'Sarabun', 'Inter', sans-serif;
   }
 }
 
 @layer components {
-  .gradient-gold {
-    background: var(--gradient-gold);
+  .gradient-cta {
+    background: var(--gradient-cta);
   }
 
-  .gradient-card {
-    background: var(--gradient-card);
+  .gradient-gold {
+    background: var(--gradient-gold);
   }
 
   .gradient-hero {
     background: var(--gradient-hero);
   }
 
-  .shadow-gold {
-    box-shadow: var(--shadow-gold);
-  }
-
   .shadow-card {
     box-shadow: var(--shadow-card);
+  }
+
+  .shadow-cta {
+    box-shadow: var(--shadow-cta);
+  }
+
+  .shadow-hover {
+    box-shadow: var(--shadow-hover);
   }
 
   .text-gradient-gold {
@@ -141,9 +147,14 @@
   }
 
   /* Casino label badges */
+  .badge-rank {
+    background: var(--gradient-gold);
+    color: hsl(222 47% 11%);
+  }
+
   .badge-local {
     background: hsl(var(--label-local));
-    color: hsl(222 47% 6%);
+    color: hsl(0 0% 100%);
   }
 
   .badge-slots {
@@ -153,46 +164,83 @@
 
   .badge-vip {
     background: var(--gradient-gold);
-    color: hsl(222 47% 6%);
+    color: hsl(222 47% 11%);
   }
 
   .badge-crypto {
     background: hsl(var(--label-crypto));
-    color: hsl(222 47% 6%);
+    color: hsl(222 47% 11%);
   }
 
-  /* CTA Button with gold gradient */
+  .badge-hot {
+    background: hsl(var(--label-hot));
+    color: hsl(0 0% 100%);
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .badge-pim {
+    background: linear-gradient(135deg, hsl(280 70% 55%), hsl(320 70% 50%));
+    color: hsl(0 0% 100%);
+  }
+
+  /* CTA Button with green gradient */
   .btn-cta {
-    @apply relative overflow-hidden font-semibold px-8 py-3 rounded-lg transition-all duration-300;
-    background: var(--gradient-gold);
-    color: hsl(222 47% 6%);
-    box-shadow: var(--shadow-gold);
+    @apply relative overflow-hidden font-bold px-8 py-4 rounded-xl transition-all duration-300 text-lg;
+    background: var(--gradient-cta);
+    color: hsl(0 0% 100%);
+    box-shadow: var(--shadow-cta);
   }
 
   .btn-cta:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 32px -4px hsl(45 93% 47% / 0.4);
+    box-shadow: 0 8px 24px -4px hsl(142 70% 45% / 0.5);
   }
 
   .btn-cta:active {
     transform: translateY(0);
   }
 
-  /* Card hover effect */
+  /* Card styles */
   .casino-card {
-    @apply relative overflow-hidden rounded-xl transition-all duration-300;
-    background: var(--gradient-card);
-    border: 1px solid hsl(var(--border));
+    @apply relative overflow-hidden rounded-2xl transition-all duration-300 bg-card border border-border;
+    box-shadow: var(--shadow-card);
   }
 
   .casino-card:hover {
     transform: translateY(-4px);
-    border-color: hsl(45 93% 47% / 0.3);
-    box-shadow: var(--shadow-card), 0 0 40px -10px hsl(45 93% 47% / 0.2);
+    box-shadow: var(--shadow-hover);
   }
 
-  /* Glow effects */
-  .glow-gold {
-    box-shadow: 0 0 20px hsl(45 93% 47% / 0.3);
+  .casino-card-event {
+    @apply casino-card;
+    border: 2px solid hsl(var(--label-hot));
+    box-shadow: 0 4px 20px -4px hsl(var(--label-hot) / 0.3);
+  }
+
+  /* LINE floating button */
+  .line-button {
+    @apply fixed right-4 bottom-4 z-50 flex items-center gap-2 px-4 py-3 rounded-full font-bold text-white transition-all duration-300;
+    background: linear-gradient(135deg, hsl(142 70% 45%), hsl(142 76% 36%));
+    box-shadow: 0 4px 20px -4px hsl(142 70% 45% / 0.5);
+  }
+
+  .line-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 24px -4px hsl(142 70% 45% / 0.6);
+  }
+
+  /* Feature list styles */
+  .feature-item {
+    @apply flex items-start gap-2 text-sm text-muted-foreground;
+  }
+
+  .feature-item::before {
+    content: '✓';
+    @apply text-primary font-bold flex-shrink-0;
+  }
+
+  /* Pim's note styling */
+  .pim-note {
+    @apply relative bg-muted/50 rounded-xl p-4 border-l-4 border-secondary;
   }
 }

@@ -1,32 +1,44 @@
-import { Trophy } from "lucide-react";
+import { Shield, CheckCircle } from "lucide-react";
 
 const Header = () => {
   return (
-    <header className="text-center py-12 px-4">
+    <header className="text-center py-8 md:py-12 px-4">
       {/* Logo/Brand Area */}
       <div className="flex items-center justify-center gap-3 mb-6 opacity-0 animate-fade-in">
-        <div className="w-12 h-12 rounded-xl gradient-gold flex items-center justify-center shadow-gold animate-pulse-gold">
-          <Trophy className="w-6 h-6 text-primary-foreground" />
+        <div className="w-12 h-12 rounded-xl gradient-gold flex items-center justify-center shadow-lg">
+          <Shield className="w-6 h-6 text-foreground" />
         </div>
         <span className="text-xl font-bold text-foreground tracking-tight">
           TIPDANA
         </span>
       </div>
 
-      {/* Main Title */}
+      {/* Main Title - Thai */}
       <h1
-        className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-4 opacity-0 animate-fade-in"
+        className="font-thai text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight mb-4 text-foreground opacity-0 animate-fade-in"
         style={{ animationDelay: "100ms" }}
       >
-        <span className="text-foreground">Top 4 Online Casinos </span>
-        <span className="text-gradient-gold">Thailand 2026</span>
+        4 เว็บคาสิโนออนไลน์ที่เชื่อถือได้มากที่สุดในไทย 2026
       </h1>
 
-      {/* Decorative Line */}
-      <div
-        className="w-24 h-1 mx-auto rounded-full gradient-gold mb-6 opacity-0 animate-fade-in"
+      {/* Subtitle - Thai */}
+      <p
+        className="font-thai text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-6 opacity-0 animate-fade-in"
         style={{ animationDelay: "200ms" }}
-      />
+      >
+        เจาะลึกเว็บตรง ไม่ผ่านเอเย่นต์ มั่นใจ 100% ตรวจสอบโดยพิม
+      </p>
+
+      {/* Trust Badge */}
+      <div
+        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted border border-border opacity-0 animate-fade-in"
+        style={{ animationDelay: "300ms" }}
+      >
+        <CheckCircle className="w-4 h-4 text-primary" />
+        <span className="font-thai text-sm font-medium text-foreground">
+          ตรวจสอบและยืนยันโดยพิมแล้ว
+        </span>
+      </div>
     </header>
   );
 };

@@ -70,6 +70,7 @@ export default {
           slots: "hsl(var(--label-slots))",
           vip: "hsl(var(--label-vip))",
           crypto: "hsl(var(--label-crypto))",
+          hot: "hsl(var(--label-hot))",
         },
       },
       borderRadius: {
@@ -94,9 +95,9 @@ export default {
           "0%": { opacity: "0", transform: "translateX(-20px)" },
           "100%": { opacity: "1", transform: "translateX(0)" },
         },
-        "pulse-gold": {
-          "0%, 100%": { boxShadow: "0 0 20px hsl(45 93% 47% / 0.3)" },
-          "50%": { boxShadow: "0 0 40px hsl(45 93% 47% / 0.5)" },
+        "pulse-hot": {
+          "0%, 100%": { boxShadow: "0 0 20px hsl(0 84% 60% / 0.3)" },
+          "50%": { boxShadow: "0 0 40px hsl(0 84% 60% / 0.5)" },
         },
         shimmer: {
           "0%": { backgroundPosition: "-200% 0" },
@@ -108,7 +109,7 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in": "fade-in 0.6s ease-out forwards",
         "slide-in": "slide-in 0.5s ease-out forwards",
-        "pulse-gold": "pulse-gold 2s ease-in-out infinite",
+        "pulse-hot": "pulse-hot 2s ease-in-out infinite",
         shimmer: "shimmer 2s linear infinite",
       },
     },

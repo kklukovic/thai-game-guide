@@ -1,83 +1,150 @@
-import { ExternalLink, Star, Shield, Zap, Bitcoin } from "lucide-react";
+import { ExternalLink, Flame, Gift, Clock, CreditCard, Bitcoin, Wallet, Building2 } from "lucide-react";
 
 interface CasinoCardProps {
   rank: number;
   name: string;
-  label: string;
-  labelType: "local" | "slots" | "vip" | "crypto";
-  thaiDetail: string;
+  tagline: string;
+  badge: string;
+  badgeType: "rank1" | "deposit" | "vip" | "crypto" | "event";
+  bonusInfo: string;
+  features: string[];
+  pimNote: string;
+  paymentMethods: readonly ("promptpay" | "bank" | "crypto")[];
   buttonText: string;
   link: string;
+  isEvent?: boolean;
+  eventTitle?: string;
+  eventPeriod?: string;
 }
 
-const labelStyles = {
-  local: "badge-local",
-  slots: "badge-slots",
+const badgeStyles = {
+  rank1: "badge-rank",
+  deposit: "badge-local",
   vip: "badge-vip",
   crypto: "badge-crypto",
+  event: "badge-hot",
 };
 
-const labelIcons = {
-  local: Shield,
-  slots: Zap,
-  vip: Star,
-  crypto: Bitcoin,
+const PaymentIcon = ({ type }: { type: "promptpay" | "bank" | "crypto" }) => {
+  const icons = {
+    promptpay: <Wallet className="w-4 h-4" />,
+    bank: <Building2 className="w-4 h-4" />,
+    crypto: <Bitcoin className="w-4 h-4" />,
+  };
+  const labels = {
+    promptpay: "PromptPay",
+    bank: "Bank Transfer",
+    crypto: "Crypto",
+  };
+  return (
+    <div className="flex items-center gap-1.5 text-xs text-muted-foreground bg-muted px-2 py-1 rounded-md">
+      {icons[type]}
+      <span>{labels[type]}</span>
+    </div>
+  );
 };
 
 const CasinoCard = ({
   rank,
   name,
-  label,
-  labelType,
-  thaiDetail,
+  tagline,
+  badge,
+  badgeType,
+  bonusInfo,
+  features,
+  pimNote,
+  paymentMethods,
   buttonText,
   link,
+  isEvent,
+  eventTitle,
+  eventPeriod,
 }: CasinoCardProps) => {
-  const Icon = labelIcons[labelType];
-
   return (
     <div
-      className="casino-card p-6 opacity-0 animate-fade-in"
+      className={`${isEvent ? "casino-card-event animate-pulse-hot" : "casino-card"} p-6 opacity-0 animate-fade-in`}
       style={{ animationDelay: `${rank * 150}ms` }}
     >
-      {/* Rank Badge */}
-      <div className="absolute top-4 left-4 w-10 h-10 rounded-full gradient-gold flex items-center justify-center font-bold text-lg text-primary-foreground shadow-gold">
-        {rank}
-      </div>
+      {/* Event Banner */}
+      {isEvent && eventTitle && (
+        <div className="mb-4 -mx-6 -mt-6 px-6 py-3 bg-gradient-to-r from-red-500 to-orange-500 text-white">
+          <div className="flex items-center gap-2 justify-center">
+            <Flame className="w-5 h-5 animate-pulse" />
+            <span className="font-bold text-sm">{eventTitle}</span>
+            <Flame className="w-5 h-5 animate-pulse" />
+          </div>
+          {eventPeriod && (
+            <p className="text-xs text-center mt-1 opacity-90 font-thai">{eventPeriod}</p>
+          )}
+        </div>
+      )}
 
-      {/* Label Badge */}
-      <div className="flex justify-end mb-4">
+      {/* Header: Rank + Name + Badge */}
+      <div className="flex items-start justify-between gap-4 mb-4">
+        <div className="flex items-center gap-3">
+          {/* Rank Circle */}
+          <div className="w-10 h-10 rounded-full gradient-gold flex items-center justify-center font-bold text-lg text-foreground shadow-lg flex-shrink-0">
+            {rank}
+          </div>
+          <div>
+            <h3 className="text-xl font-bold text-foreground">{name}</h3>
+            <p className="text-sm text-muted-foreground">{tagline}</p>
+          </div>
+        </div>
+        
+        {/* Badge */}
         <span
-          className={`${labelStyles[labelType]} px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-1.5`}
+          className={`${badgeStyles[badgeType]} px-3 py-1.5 rounded-full text-xs font-bold whitespace-nowrap flex items-center gap-1.5`}
         >
-          <Icon className="w-3.5 h-3.5" />
-          {label}
+          {badgeType === "event" && <Flame className="w-3.5 h-3.5" />}
+          {badge}
         </span>
       </div>
 
-      {/* Casino Name */}
-      <h3 className="text-2xl font-bold text-foreground mb-3 tracking-tight">
-        {name}
-      </h3>
+      {/* Bonus Info */}
+      <div className="mb-4 p-3 bg-muted/50 rounded-xl border border-border">
+        <div className="flex items-center gap-2 mb-1">
+          <Gift className="w-4 h-4 text-secondary" />
+          <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Bonus</span>
+        </div>
+        <p className="font-thai font-semibold text-foreground">{bonusInfo}</p>
+      </div>
 
-      {/* Thai Description */}
-      <p className="font-thai text-muted-foreground text-base mb-6 leading-relaxed">
-        {thaiDetail}
-      </p>
+      {/* Key Features */}
+      <div className="mb-4 space-y-2">
+        {features.map((feature, index) => (
+          <div key={index} className="feature-item font-thai">
+            {feature}
+          </div>
+        ))}
+      </div>
+
+      {/* Pim's Note */}
+      <div className="pim-note mb-4">
+        <div className="flex items-center gap-2 mb-2">
+          <div className="w-6 h-6 rounded-full badge-pim flex items-center justify-center text-xs font-bold">พิม</div>
+          <span className="text-xs font-semibold text-secondary">Pim's Note</span>
+        </div>
+        <p className="font-thai text-sm text-muted-foreground italic">"{pimNote}"</p>
+      </div>
+
+      {/* Payment Methods */}
+      <div className="flex flex-wrap gap-2 mb-5">
+        {paymentMethods.map((method) => (
+          <PaymentIcon key={method} type={method} />
+        ))}
+      </div>
 
       {/* CTA Button */}
       <a
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        className="btn-cta w-full flex items-center justify-center gap-2 font-thai text-lg"
+        className="btn-cta w-full flex items-center justify-center gap-2 font-thai"
       >
         {buttonText}
-        <ExternalLink className="w-4 h-4" />
+        <ExternalLink className="w-5 h-5" />
       </a>
-
-      {/* Decorative Elements */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
     </div>
   );
 };
