@@ -4,6 +4,7 @@ interface CasinoCardProps {
   rank: number;
   name: string;
   tagline: string;
+  logo: string;
   badge: string;
   badgeType: "rank1" | "deposit" | "vip" | "crypto" | "event";
   bonusInfo: string;
@@ -48,6 +49,7 @@ const CasinoCard = ({
   rank,
   name,
   tagline,
+  logo,
   badge,
   badgeType,
   bonusInfo,
@@ -79,16 +81,21 @@ const CasinoCard = ({
         </div>
       )}
 
-      {/* Header: Rank + Name + Badge */}
+      {/* Header: Logo + Rank + Name + Badge */}
       <div className="flex items-start justify-between gap-4 mb-4">
         <div className="flex items-center gap-3">
-          {/* Rank Circle */}
-          <div className="w-10 h-10 rounded-full gradient-gold flex items-center justify-center font-bold text-lg text-foreground shadow-lg flex-shrink-0">
-            {rank}
+          {/* Casino Logo */}
+          <div className="w-16 h-16 rounded-xl bg-muted/50 flex items-center justify-center overflow-hidden flex-shrink-0 border border-border">
+            <img src={logo} alt={`${name} logo`} className="w-full h-full object-contain p-1" />
           </div>
           <div>
-            <h3 className="text-xl font-bold text-foreground">{name}</h3>
-            <p className="text-sm text-muted-foreground">{tagline}</p>
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 rounded-full gradient-gold flex items-center justify-center font-bold text-sm text-foreground shadow-md flex-shrink-0">
+                {rank}
+              </div>
+              <h3 className="text-xl font-bold text-foreground">{name}</h3>
+            </div>
+            <p className="text-sm text-muted-foreground mt-0.5">{tagline}</p>
           </div>
         </div>
         
