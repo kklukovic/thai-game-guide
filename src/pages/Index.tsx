@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import CasinoCard from "@/components/CasinoCard";
 import Footer from "@/components/Footer";
+import verajohnLogo from "@/assets/verajohn.png";
 import siam369Logo from "@/assets/siam369.png";
 import roll88Logo from "@/assets/roll88.png";
 import uea8Logo from "@/assets/uea8.png";
@@ -9,6 +10,26 @@ import cloudbetLogo from "@/assets/cloudbet.jfif";
 const casinos = [
   {
     rank: 1,
+    name: "Vera&John",
+    tagline: "Pim's Discovery of the Year",
+    logo: verajohnLogo,
+    badge: "มาใหม่ 2025",
+    badgeType: "new" as const,
+    bonusInfo: "100% Welcome Bonus up to ฿5,250 + 88 Free Spins",
+    features: [
+      "88 Free Spins on 'Sugar Rush 1000' (Pragmatic Play)",
+      "ฝากขั้นต่ำเพียง 175 บาท",
+      "รองรับ PromptPay และ QR Payment ทุกธนาคาร",
+      "4,500+ games including PG Soft and Evolution",
+    ],
+    pimNote: "แบรนด์ระดับโลกมาถึงไทยแล้วค่ะ! พิมชอบที่โบนัสต้อนรับให้เยอะมาก แถมมีฟรีสปิน Sugar Rush 1000 ให้ด้วย คุ้มสุดๆ",
+    paymentMethods: ["promptpay", "bank"] as const,
+    buttonText: "ทางเข้าเล่น",
+    link: "https://tinyurl.com/infiaff?bid=114&lid=227&aid=SRS3RAmgr&cid=7607",
+    isFeatured: true,
+  },
+  {
+    rank: 2,
     name: "Siam369",
     tagline: "The Local Giant",
     logo: siam369Logo,
@@ -27,7 +48,7 @@ const casinos = [
     link: "https://www.siam369.vip/th-th/register?aff=6479c962ca",
   },
   {
-    rank: 2,
+    rank: 3,
     name: "Roll88",
     tagline: "The Slot Expert",
     logo: roll88Logo,
@@ -50,7 +71,7 @@ const casinos = [
     eventPeriod: "ตั้งแต่วันนี้ - 20 มีนาคม 2026",
   },
   {
-    rank: 3,
+    rank: 4,
     name: "UEA8",
     tagline: "The VIP Choice",
     logo: uea8Logo,
@@ -68,7 +89,7 @@ const casinos = [
     link: "https://www.uea8sg2.com/th-th/register?affid=2594",
   },
   {
-    rank: 4,
+    rank: 5,
     name: "Cloudbet",
     tagline: "The Crypto King",
     logo: cloudbetLogo,

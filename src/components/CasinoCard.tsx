@@ -1,4 +1,4 @@
-import { ExternalLink, Flame, Gift, Clock, CreditCard, Bitcoin, Wallet, Building2 } from "lucide-react";
+import { ExternalLink, Flame, Gift, Clock, CreditCard, Bitcoin, Wallet, Building2, Sparkles } from "lucide-react";
 
 interface CasinoCardProps {
   rank: number;
@@ -7,7 +7,7 @@ interface CasinoCardProps {
   logo: string;
   logoBgDark?: boolean;
   badge: string;
-  badgeType: "rank1" | "deposit" | "vip" | "crypto" | "event";
+  badgeType: "rank1" | "deposit" | "vip" | "crypto" | "event" | "new";
   bonusInfo: string;
   features: string[];
   pimNote: string;
@@ -17,6 +17,7 @@ interface CasinoCardProps {
   isEvent?: boolean;
   eventTitle?: string;
   eventPeriod?: string;
+  isFeatured?: boolean;
 }
 
 const badgeStyles = {
@@ -25,6 +26,7 @@ const badgeStyles = {
   vip: "badge-vip",
   crypto: "badge-crypto",
   event: "badge-hot",
+  new: "badge-new",
 };
 
 const PaymentIcon = ({ type }: { type: "promptpay" | "bank" | "crypto" }) => {
@@ -63,9 +65,16 @@ const CasinoCard = ({
   isEvent,
   eventTitle,
   eventPeriod,
+  isFeatured,
 }: CasinoCardProps) => {
+  const cardClass = isFeatured 
+    ? "casino-card-featured animate-pulse-hot" 
+    : isEvent 
+      ? "casino-card-event animate-pulse-hot" 
+      : "casino-card";
+      
   return (
-    <div className={`${isEvent ? "casino-card-event animate-pulse-hot" : "casino-card"}`}>
+    <div className={cardClass}>
       <div
         className="p-6 animate-fade-in motion-reduce:animate-none"
         style={{ animationDelay: `${rank * 150}ms` }}
@@ -109,6 +118,7 @@ const CasinoCard = ({
             className={`${badgeStyles[badgeType]} px-3 py-1.5 rounded-full text-xs font-bold whitespace-nowrap flex items-center gap-1.5`}
           >
             {badgeType === "event" && <Flame className="w-3.5 h-3.5" />}
+            {badgeType === "new" && <Sparkles className="w-3.5 h-3.5" />}
             {badge}
           </span>
         </div>
