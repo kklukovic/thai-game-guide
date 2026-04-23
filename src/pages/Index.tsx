@@ -68,7 +68,7 @@ const casinos = [
     pimNote: "12BET เป็นแบรนด์ที่อยู่ในวงการมานานค่ะ พิมชอบที่ระบบความปลอดภัยแน่นมาก โบนัสต้อนรับ 2,088 บาทก็จัดเต็มสำหรับสมาชิกใหม่",
     paymentMethods: ["promptpay", "bank"] as const,
     buttonText: "ทางเข้าเล่น",
-    link: "https://www.12paffiliates.com/YNCywBRF",
+    link: "https://www.12playaffiath.com/th-TH/register?_afc=M34rOWKQ70YCFkoYdJ6gy3k%3D&_sz_camp=ibibet%20DCampaign%20(TH)&_sz_ref=YNCywBRF&_sz_aff=ibibet",
   },
   {
     rank: 4,
