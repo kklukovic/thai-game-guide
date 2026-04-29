@@ -53,7 +53,7 @@ const casinos = [
   },
   {
     rank: 3,
-    name: "12BET",
+    name: "12Play",
     tagline: "The Trusted Global Brand",
     logo: twelvebetLogo,
     badge: "สิทธิพิเศษสมาชิกใหม่",
@@ -65,7 +65,7 @@ const casinos = [
       "คาสิโนสด, สล็อต และกีฬาครบในที่เดียว",
       "รองรับ PromptPay และโอนผ่านธนาคารไทย",
     ],
-    pimNote: "12BET เป็นแบรนด์ที่อยู่ในวงการมานานค่ะ พิมชอบที่ระบบความปลอดภัยแน่นมาก โบนัสต้อนรับ 2,088 บาทก็จัดเต็มสำหรับสมาชิกใหม่",
+    pimNote: "12Play เป็นแบรนด์ที่อยู่ในวงการมานานค่ะ พิมชอบที่ระบบความปลอดภัยแน่นมาก โบนัสต้อนรับ 2,088 บาทก็จัดเต็มสำหรับสมาชิกใหม่",
     paymentMethods: ["promptpay", "bank"] as const,
     buttonText: "ทางเข้าเล่น",
     link: "https://www.12playaffiath.com/th-TH/register?_afc=M34rOWKQ70YCFkoYdJ6gy3k%3D&_sz_camp=ibibet%20DCampaign%20(TH)&_sz_ref=YNCywBRF&_sz_aff=ibibet",
