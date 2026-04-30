@@ -2,99 +2,92 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sarabun:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Prompt:wght@400;500;600;700;800&display=swap');
 
-/* Casino Affiliate Portal - Professional Light Theme
-   Clean, authoritative, mobile-first with green CTAs */
+/* Casino Affiliate Portal - Premium Editorial Light Theme */
 
 @layer base {
   :root {
-    /* Light professional theme */
-    --background: 0 0% 98%;
-    --foreground: 222 47% 11%;
+    /* Soft warm off-white background */
+    --background: 40 30% 98%;
+    --foreground: 222 35% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 222 35% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 222 35% 12%;
 
-    /* Green primary for CTAs */
-    --primary: 142 70% 45%;
+    /* Rich green CTA */
+    --primary: 152 65% 38%;
     --primary-foreground: 0 0% 100%;
 
-    /* Gold accent for badges */
-    --secondary: 45 93% 47%;
-    --secondary-foreground: 222 47% 11%;
+    /* Warm amber/gold */
+    --secondary: 38 92% 50%;
+    --secondary-foreground: 222 35% 12%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 9% 46%;
+    --muted: 36 20% 95%;
+    --muted-foreground: 220 10% 42%;
 
-    --accent: 45 93% 47%;
-    --accent-foreground: 222 47% 11%;
+    --accent: 38 92% 50%;
+    --accent-foreground: 222 35% 12%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 142 70% 45%;
+    --border: 30 15% 90%;
+    --input: 30 15% 90%;
+    --ring: 152 65% 38%;
 
-    --radius: 0.75rem;
+    --radius: 1.25rem;
 
-    /* Custom tokens */
-    --gradient-cta: linear-gradient(135deg, hsl(142 70% 45%), hsl(142 76% 36%));
-    --gradient-gold: linear-gradient(135deg, hsl(45 93% 47%), hsl(35 93% 42%));
-    --gradient-hero: linear-gradient(180deg, hsl(220 14% 96%) 0%, hsl(0 0% 100%) 100%);
-    --shadow-card: 0 4px 20px -4px hsl(220 13% 91% / 0.8);
-    --shadow-cta: 0 4px 16px -4px hsl(142 70% 45% / 0.4);
-    --shadow-hover: 0 8px 30px -8px hsl(220 13% 70% / 0.3);
-    
-    /* Label colors */
-    --label-local: 142 70% 45%;
-    --label-slots: 280 70% 55%;
-    --label-vip: 45 93% 47%;
-    --label-crypto: 32 95% 50%;
-    --label-hot: 0 84% 60%;
+    /* Custom premium tokens */
+    --gradient-cta: linear-gradient(135deg, hsl(152 65% 42%), hsl(152 70% 32%));
+    --gradient-gold: linear-gradient(135deg, hsl(42 95% 55%), hsl(32 90% 48%));
+    --gradient-hero: radial-gradient(ellipse at top, hsl(38 60% 95%) 0%, hsl(40 30% 98%) 60%);
+    --shadow-card: 0 1px 2px hsl(220 15% 80% / 0.08), 0 4px 16px -6px hsl(220 15% 60% / 0.12);
+    --shadow-card-hover: 0 4px 12px hsl(220 15% 70% / 0.12), 0 16px 40px -12px hsl(220 15% 50% / 0.18);
+    --shadow-cta: 0 4px 14px -2px hsl(152 65% 38% / 0.35);
+    --shadow-cta-hover: 0 8px 22px -4px hsl(152 65% 38% / 0.5);
+    --shadow-featured: 0 2px 4px hsl(38 92% 50% / 0.08), 0 12px 36px -10px hsl(38 92% 50% / 0.22);
+
+    /* Label colors - more restrained */
+    --label-local: 152 60% 40%;
+    --label-vip: 38 92% 48%;
+    --label-crypto: 28 90% 50%;
+    --label-hot: 12 80% 55%;
+    --label-new: 280 55% 52%;
 
     --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 222 47% 11%;
-    --sidebar-primary: 142 70% 45%;
+    --sidebar-foreground: 222 35% 12%;
+    --sidebar-primary: 152 65% 38%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 14% 96%;
-    --sidebar-accent-foreground: 222 47% 11%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 142 70% 45%;
+    --sidebar-accent: 36 20% 95%;
+    --sidebar-accent-foreground: 222 35% 12%;
+    --sidebar-border: 30 15% 90%;
+    --sidebar-ring: 152 65% 38%;
   }
 
   .dark {
-    --background: 222 47% 6%;
-    --foreground: 210 40% 96%;
-    --card: 222 47% 9%;
-    --card-foreground: 210 40% 96%;
-    --popover: 222 47% 9%;
-    --popover-foreground: 210 40% 96%;
-    --primary: 142 70% 45%;
+    --background: 222 35% 7%;
+    --foreground: 40 20% 96%;
+    --card: 222 35% 10%;
+    --card-foreground: 40 20% 96%;
+    --popover: 222 35% 10%;
+    --popover-foreground: 40 20% 96%;
+    --primary: 152 65% 45%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 45 93% 47%;
-    --secondary-foreground: 222 47% 11%;
-    --muted: 222 30% 15%;
-    --muted-foreground: 215 20% 55%;
-    --accent: 45 93% 47%;
-    --accent-foreground: 222 47% 6%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 222 30% 18%;
-    --input: 222 30% 18%;
-    --ring: 142 70% 45%;
-    --sidebar-background: 222 47% 6%;
-    --sidebar-foreground: 210 40% 96%;
-    --sidebar-primary: 142 70% 45%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 222 30% 15%;
-    --sidebar-accent-foreground: 210 40% 96%;
-    --sidebar-border: 222 30% 18%;
-    --sidebar-ring: 142 70% 45%;
+    --secondary: 38 92% 55%;
+    --secondary-foreground: 222 35% 12%;
+    --muted: 222 25% 16%;
+    --muted-foreground: 215 15% 60%;
+    --accent: 38 92% 55%;
+    --accent-foreground: 222 35% 7%;
+    --destructive: 0 62% 35%;
+    --destructive-foreground: 40 20% 96%;
+    --border: 222 25% 18%;
+    --input: 222 25% 18%;
+    --ring: 152 65% 45%;
   }
 }
 
@@ -105,12 +98,13 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', 'Sarabun', sans-serif;
+    font-family: 'Prompt', 'IBM Plex Sans Thai', 'Inter', sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    -webkit-font-smoothing: antialiased;
   }
 
-  /* Thai text optimization */
   .font-thai {
-    font-family: 'Sarabun', 'Inter', sans-serif;
+    font-family: 'IBM Plex Sans Thai', 'Prompt', 'Inter', sans-serif;
   }
 }
 
@@ -131,14 +125,6 @@
     box-shadow: var(--shadow-card);
   }
 
-  .shadow-cta {
-    box-shadow: var(--shadow-cta);
-  }
-
-  .shadow-hover {
-    box-shadow: var(--shadow-hover);
-  }
-
   .text-gradient-gold {
     background: var(--gradient-gold);
     -webkit-background-clip: text;
@@ -146,113 +132,123 @@
     background-clip: text;
   }
 
-  /* Casino label badges */
+  /* Refined badges - softer tinted pills */
   .badge-rank {
-    background: var(--gradient-gold);
-    color: hsl(222 47% 11%);
+    background: linear-gradient(135deg, hsl(42 95% 92%), hsl(38 90% 86%));
+    color: hsl(28 80% 32%);
+    border: 1px solid hsl(38 80% 80%);
   }
 
   .badge-local {
-    background: hsl(var(--label-local));
-    color: hsl(0 0% 100%);
-  }
-
-  .badge-slots {
-    background: hsl(var(--label-slots));
-    color: hsl(0 0% 100%);
+    background: hsl(152 60% 94%);
+    color: hsl(152 65% 28%);
+    border: 1px solid hsl(152 50% 82%);
   }
 
   .badge-vip {
-    background: var(--gradient-gold);
-    color: hsl(222 47% 11%);
+    background: linear-gradient(135deg, hsl(42 95% 92%), hsl(38 90% 86%));
+    color: hsl(28 80% 32%);
+    border: 1px solid hsl(38 80% 80%);
   }
 
   .badge-crypto {
-    background: hsl(var(--label-crypto));
-    color: hsl(222 47% 11%);
+    background: hsl(28 90% 94%);
+    color: hsl(22 80% 35%);
+    border: 1px solid hsl(28 80% 82%);
   }
 
   .badge-hot {
-    background: hsl(var(--label-hot));
-    color: hsl(0 0% 100%);
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    background: hsl(12 85% 95%);
+    color: hsl(12 75% 40%);
+    border: 1px solid hsl(12 70% 82%);
   }
 
   .badge-new {
-    background: linear-gradient(135deg, hsl(320 70% 50%), hsl(280 70% 55%));
-    color: hsl(0 0% 100%);
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-
-  .casino-card-featured {
-    @apply casino-card;
-    border: 2px solid hsl(320 70% 50%);
-    box-shadow: 0 4px 24px -4px hsl(320 70% 50% / 0.4);
+    background: hsl(280 60% 95%);
+    color: hsl(280 55% 38%);
+    border: 1px solid hsl(280 50% 84%);
   }
 
   .badge-pim {
-    background: linear-gradient(135deg, hsl(280 70% 55%), hsl(320 70% 50%));
-    color: hsl(0 0% 100%);
+    background: var(--gradient-gold);
+    color: hsl(28 80% 25%);
   }
 
-  /* CTA Button with green gradient */
+  /* Premium CTA */
   .btn-cta {
-    @apply relative overflow-hidden font-bold px-8 py-4 rounded-xl transition-all duration-300 text-lg;
+    @apply relative overflow-hidden font-semibold rounded-xl transition-all duration-200 text-base flex items-center justify-center gap-2;
+    height: 52px;
     background: var(--gradient-cta);
     color: hsl(0 0% 100%);
     box-shadow: var(--shadow-cta);
+    letter-spacing: 0.01em;
+  }
+
+  .btn-cta::after {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-200;
+    background: linear-gradient(135deg, hsl(0 0% 100% / 0.12), transparent);
   }
 
   .btn-cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px -4px hsl(142 70% 45% / 0.5);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-cta-hover);
+  }
+
+  .btn-cta:hover::after {
+    @apply opacity-100;
   }
 
   .btn-cta:active {
     transform: translateY(0);
   }
 
-  /* Card styles */
+  /* Premium cards */
   .casino-card {
-    @apply relative overflow-hidden rounded-2xl transition-all duration-300 bg-card border border-border;
+    @apply relative rounded-3xl transition-all duration-300 bg-card border border-border;
     box-shadow: var(--shadow-card);
   }
 
   .casino-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .casino-card-featured {
+    @apply casino-card;
+    border: 1px solid hsl(38 80% 78%);
+    box-shadow: var(--shadow-featured);
+    background:
+      linear-gradient(180deg, hsl(42 80% 98%) 0%, hsl(0 0% 100%) 40%);
   }
 
   .casino-card-event {
     @apply casino-card;
-    border: 2px solid hsl(var(--label-hot));
-    box-shadow: 0 4px 20px -4px hsl(var(--label-hot) / 0.3);
+    border: 1px solid hsl(12 70% 82%);
   }
 
-  /* LINE floating button */
-  .line-button {
-    @apply fixed right-4 bottom-4 z-50 flex items-center gap-2 px-4 py-3 rounded-full font-bold text-white transition-all duration-300;
-    background: linear-gradient(135deg, hsl(142 70% 45%), hsl(142 76% 36%));
-    box-shadow: 0 4px 20px -4px hsl(142 70% 45% / 0.5);
-  }
-
-  .line-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 24px -4px hsl(142 70% 45% / 0.6);
-  }
-
-  /* Feature list styles */
-  .feature-item {
-    @apply flex items-start gap-2 text-sm text-muted-foreground;
-  }
-
-  .feature-item::before {
-    content: '✓';
-    @apply text-primary font-bold flex-shrink-0;
-  }
-
-  /* Pim's note styling */
+  /* Editorial Pim's note */
   .pim-note {
-    @apply relative bg-muted/50 rounded-xl p-4 border-l-4 border-secondary;
+    @apply relative rounded-2xl px-4 py-3 border;
+    background: linear-gradient(135deg, hsl(42 80% 97%) 0%, hsl(38 70% 95%) 100%);
+    border-color: hsl(38 60% 88%);
+  }
+
+  /* Bonus highlight panel */
+  .bonus-panel {
+    @apply rounded-2xl px-4 py-3 border;
+    background: linear-gradient(135deg, hsl(152 50% 96%) 0%, hsl(152 40% 94%) 100%);
+    border-color: hsl(152 40% 86%);
+  }
+
+  /* Feature item */
+  .feature-item {
+    @apply flex items-start gap-2 text-sm text-foreground/80 leading-snug;
+  }
+
+  /* Trust pill */
+  .trust-pill {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border;
+    box-shadow: 0 1px 2px hsl(220 15% 80% / 0.08);
   }
 }

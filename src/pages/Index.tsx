@@ -111,11 +111,11 @@ const casinos = [
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <div className="max-w-4xl mx-auto px-4 py-6 pb-24">
+      <div className="max-w-[1120px] mx-auto px-4 sm:px-6 pb-16">
         <Header />
 
         {/* Casino Cards List */}
-        <section className="space-y-6">
+        <section className="max-w-3xl mx-auto space-y-4 md:space-y-5">
           {casinos.map((casino) => (
             <CasinoCard key={casino.name} {...casino} />
           ))}
