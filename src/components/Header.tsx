@@ -14,16 +14,6 @@ const Header = () => {
         aria-hidden
       />
 
-      {/* Brand */}
-      <div className="flex items-center justify-center gap-2.5 mb-7 opacity-0 animate-fade-in">
-        <div className="w-10 h-10 rounded-xl gradient-gold flex items-center justify-center shadow-md">
-          <Shield className="w-5 h-5 text-foreground" />
-        </div>
-        <span className="text-lg font-bold text-foreground tracking-[0.18em]">
-          TIPDANA
-        </span>
-      </div>
-
       {/* Eyebrow */}
       <div
         className="inline-block mb-4 px-3 py-1 rounded-full bg-secondary/10 border border-secondary/20 opacity-0 animate-fade-in"
