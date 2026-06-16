@@ -21,7 +21,7 @@ const casinos = [
     pimNote: "พิมคอนเฟิร์มค่ะ ฝากง่ายผ่าน PromptPay และถอนไวที่สุดในตอนนี้",
     paymentMethods: ["promptpay", "bank"] as const,
     buttonText: "ทางเข้าเล่น",
-    link: "https://www.siam369.vip/th-th/register?aff=6479c962ca",
+    link: "https://www.siam369f4.com/th-th/register?aff=6479c962ca",
     isFeatured: true,
   },
   {
