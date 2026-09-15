@@ -1,36 +1,27 @@
-import { Shield, Lock } from "lucide-react";
+import { Lock, Shield } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="mt-12 pt-8 pb-6 px-4 border-t border-border/70">
-      <div className="max-w-3xl mx-auto text-center">
-        <div className="inline-flex items-center gap-2 mb-3 px-3 py-1 rounded-full bg-muted/60 text-muted-foreground">
-          <Shield className="w-3.5 h-3.5" />
-          <span className="text-xs font-semibold tracking-wide">Responsible Gaming</span>
+    <footer className="pb-10 pt-4 md:pb-12">
+      <div className="rounded-[24px] border border-border/80 bg-white/55 px-6 py-7 text-center backdrop-blur-sm md:px-8">
+        <div className="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-emerald-50 text-emerald-700">
+          <Shield className="h-4 w-4" />
         </div>
 
-        <p className="font-thai text-[13px] text-muted-foreground mb-5 max-w-xl mx-auto leading-relaxed">
-          การพนันออนไลน์มีความเสี่ยง โปรดเล่นอย่างมีสติ
-          เว็บไซต์นี้มีไว้สำหรับผู้ที่มีอายุ 18 ปีขึ้นไปเท่านั้น
+        <p className="font-display text-[15px] font-medium text-foreground">Responsible Gaming</p>
+        <p className="mx-auto mt-2 max-w-xl font-thai text-[12px] leading-6 text-muted-foreground">
+          การพนันออนไลน์มีความเสี่ยง โปรดเล่นอย่างมีสติ เว็บไซต์นี้มีไว้สำหรับผู้ที่มีอายุ 18 ปีขึ้นไปเท่านั้น
         </p>
 
-        <div className="flex items-center justify-center gap-5 mb-5">
-          <div className="flex items-center gap-1.5 text-muted-foreground">
-            <Lock className="w-3.5 h-3.5 text-primary" />
-            <span className="text-[11px] font-medium">SSL Secured</span>
-          </div>
-          <div className="w-px h-3 bg-border" />
-          <div className="flex items-center gap-1.5 text-muted-foreground">
-            <Shield className="w-3.5 h-3.5 text-primary" />
-            <span className="text-[11px] font-medium">Verified Partners</span>
-          </div>
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-4 text-[10px] font-medium text-muted-foreground">
+          <span className="inline-flex items-center gap-1.5"><Lock className="h-3.5 w-3.5 text-primary" /> SSL Secured</span>
+          <span className="h-3 w-px bg-border" />
+          <span className="inline-flex items-center gap-1.5"><Shield className="h-3.5 w-3.5 text-primary" /> Partner links clearly presented</span>
         </div>
 
-        <p className="text-[11px] text-muted-foreground/60">
-          © {currentYear} TIPDANA. All rights reserved.
-        </p>
+        <p className="mt-5 text-[10px] text-muted-foreground/60">© {currentYear} TIPDANA. All rights reserved.</p>
       </div>
     </footer>
   );
