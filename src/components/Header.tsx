@@ -46,7 +46,7 @@ const Header = () => {
             className="hero-photo"
             style={{
               backgroundImage:
-                "linear-gradient(180deg, rgba(36,20,30,.02) 35%, rgba(36,20,30,.38) 100%), url('/pim-resort.png')",
+                "linear-gradient(180deg, rgba(36,20,30,.02) 35%, rgba(36,20,30,.38) 100%), url('/pim-resort.jpg')",
             }}
           />
           <div className="hero-photo-caption">
