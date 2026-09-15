@@ -7,7 +7,7 @@ const PimStory = () => (
     <div className="pim-editorial-card">
       <div
         className="pim-editorial-photo"
-        style={{ backgroundImage: "linear-gradient(180deg, transparent 45%, rgba(28,19,28,.42)), url('/pim-beach.jpg')" }}
+        style={{ backgroundImage: "linear-gradient(180deg, transparent 45%, rgba(28,19,28,.42)), url('/pim-beach.png')" }}
         role="img"
         aria-label="Pim on holiday"
       />
@@ -50,7 +50,7 @@ const PimStory = () => (
       </div>
       <div
         className="telegram-photo"
-        style={{ backgroundImage: "linear-gradient(180deg, transparent 55%, rgba(7,22,39,.26)), url('/pim-balcony.jpg')" }}
+        style={{ backgroundImage: "linear-gradient(180deg, transparent 55%, rgba(7,22,39,.26)), url('/pim-balcony.png')" }}
         role="img"
         aria-label="Pim relaxing on a balcony"
       />
