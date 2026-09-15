@@ -1,4 +1,5 @@
 import { CheckCircle2, Sparkles } from "lucide-react";
+import "./HeaderPhoto.css";
 
 const Header = () => {
   return (
@@ -41,14 +42,11 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="hero-photo-wrap" aria-hidden>
-          <div
-            className="hero-photo"
-            style={{
-              backgroundImage:
-                "linear-gradient(180deg, rgba(36,20,30,.02) 35%, rgba(36,20,30,.38) 100%), url('/pim-resort.jpg')",
-            }}
-          />
+        <div className="hero-photo-wrap">
+          <div className="hero-photo hero-photo-backdrop" style={{ backgroundImage: "url('/pim-resort.jpg')" }} aria-hidden />
+          <div className="hero-portrait-frame">
+            <img className="hero-portrait-image" src="/pim-resort.jpg" alt="Pim at a seaside resort" />
+          </div>
           <div className="hero-photo-caption">
             <span className="hero-photo-dot" />
             <span className="font-thai">Pim · Thailand</span>
