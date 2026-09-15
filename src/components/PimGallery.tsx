@@ -10,7 +10,7 @@ const PimGallery = () => (
   <section className="pim-gallery" aria-label="Pim lifestyle photos">
     {pimPhotos.map((photo, index) => (
       <figure key={photo.src} className={`pim-gallery-item pim-gallery-item-${index + 1}`}>
-        <img src={photo.src} alt={photo.alt} loading={index === 0 ? "eager" : "lazy"} />
+        <img src={photo.src} alt={photo.alt} loading="eager" />
         <figcaption>{photo.label}</figcaption>
       </figure>
     ))}
