@@ -1,3 +1,5 @@
+import "./PimGallery.css";
+
 const pimPhotos = [
   { src: "/pim-resort.png", alt: "Pim at a seaside resort", label: "Pim · Thailand" },
   { src: "/pim-beach.png", alt: "Pim on the beach", label: "Beach evening" },
