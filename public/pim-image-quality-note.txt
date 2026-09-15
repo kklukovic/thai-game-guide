@@ -1,1 +1,0 @@
-Pim gallery assets are referenced as /pim-resort.png, /pim-beach.png and /pim-balcony.png. Replace the currently compressed assets with higher-resolution versions when binary upload is available.
