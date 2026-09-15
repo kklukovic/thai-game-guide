@@ -4,7 +4,6 @@ import Footer from "@/components/Footer";
 import TopNav from "@/components/TopNav";
 import OfferCarousel, { type FeaturedOffer } from "@/components/OfferCarousel";
 import PimStory from "@/components/PimStory";
-import PimGallery from "@/components/PimGallery";
 import MobileDock from "@/components/MobileDock";
 import siam369Logo from "@/assets/siam369.png";
 import roll88Logo from "@/assets/roll88.png";
@@ -145,8 +144,6 @@ const Index = () => {
           <div className="mt-6 md:mt-8">
             <OfferCarousel offers={featuredOffers} />
           </div>
-
-          <PimGallery />
 
           <section id="picks" className="pt-12 md:pt-16">
             <div className="mb-7 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
