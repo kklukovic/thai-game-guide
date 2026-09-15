@@ -90,94 +90,94 @@ const CasinoCard = ({
         </div>
       )}
 
-      <div
-        className="animate-fade-in p-5 motion-reduce:animate-none md:p-6"
-        style={{ animationDelay: `${rank * 90}ms` }}
-      >
-        <div className="mb-5 flex items-start justify-between gap-3">
-          <div className="flex min-w-0 items-center gap-3.5">
-            <div
-              className={`casino-logo ${logoBgDark ? "bg-foreground" : "bg-white"}`}
-            >
-              <img src={logo} alt={`${name} logo`} className="h-full w-full object-contain p-1.5" />
-            </div>
+      <div className="grid md:grid-cols-[92px_1fr]">
+        <div className="card-rank-rail">
+          <div className="card-rank-number">{String(rank).padStart(2, "0")}</div>
+          <div className="card-rank-line" />
+          <div className="hidden -rotate-90 whitespace-nowrap text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground md:block">
+            Pim's list
+          </div>
+        </div>
 
-            <div className="min-w-0">
-              <div className="mb-1 flex items-center gap-2.5">
-                <span className="rank-number">{String(rank).padStart(2, "0")}</span>
-                <h3 className="truncate text-xl font-bold tracking-[-0.02em] text-foreground md:text-[22px]">
+        <div
+          className="animate-fade-in p-5 motion-reduce:animate-none md:p-7"
+          style={{ animationDelay: `${rank * 70}ms` }}
+        >
+          <div className="mb-5 flex items-start justify-between gap-3">
+            <div className="flex min-w-0 items-center gap-3.5">
+              <div className={`casino-logo ${logoBgDark ? "bg-foreground" : "bg-white"}`}>
+                <img src={logo} alt={`${name} logo`} className="h-full w-full object-contain p-1.5" />
+              </div>
+
+              <div className="min-w-0">
+                <h3 className="truncate font-display text-[22px] font-semibold tracking-[-0.025em] text-foreground md:text-[25px]">
                   {name}
                 </h3>
+                <p className="mt-0.5 text-[11px] font-semibold uppercase tracking-[0.11em] text-muted-foreground">{tagline}</p>
               </div>
-              <p className="text-[12px] font-medium tracking-wide text-muted-foreground">{tagline}</p>
             </div>
+
+            <span className={`${badgeStyles[badgeType]} status-badge`}>
+              {badgeType === "event" && <Flame className="h-3 w-3" />}
+              {badgeType === "new" && <Sparkles className="h-3 w-3" />}
+              <span className="font-thai">{badge}</span>
+            </span>
           </div>
 
-          <span className={`${badgeStyles[badgeType]} status-badge`}>
-            {badgeType === "event" && <Flame className="h-3 w-3" />}
-            {badgeType === "new" && <Sparkles className="h-3 w-3" />}
-            <span className="font-thai">{badge}</span>
-          </span>
-        </div>
-
-        {isFeatured && (
-          <div className="mb-3 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-amber-700">
-            <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
-            Pim's Top Pick
-          </div>
-        )}
-
-        <div className="bonus-panel mb-4">
-          <div className="mb-1 flex items-center gap-2">
-            <Gift className="h-3.5 w-3.5 text-primary" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-primary">Current offer</span>
-          </div>
-          <p className="font-thai text-[14px] font-semibold leading-6 text-foreground">{bonusInfo}</p>
-        </div>
-
-        <div className="mb-4 grid grid-cols-1 gap-x-5 gap-y-2 sm:grid-cols-2">
-          {features.map((feature, index) => (
-            <div key={index} className="feature-item font-thai text-[13px]">
-              <span className="feature-check">
-                <Check className="h-3 w-3" strokeWidth={3} />
-              </span>
-              <span>{feature}</span>
+          <div className="offer-band mb-5">
+            <div className="mb-1.5 flex items-center gap-2">
+              <Gift className="h-3.5 w-3.5" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.16em]">Current offer</span>
             </div>
-          ))}
-        </div>
+            <p className="font-thai text-[15px] font-semibold leading-6 text-foreground">{bonusInfo}</p>
+          </div>
 
-        <div className="pim-note mb-4">
-          <div className="flex items-start gap-3">
-            <div className="badge-pim mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full font-thai text-[10px] font-bold">
-              พิม
-            </div>
-            <div className="min-w-0 flex-1">
-              <div className="mb-1 flex items-center gap-1.5">
-                <Quote className="h-3 w-3 text-secondary" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-secondary">
-                  Pim's note
+          <div className="mb-5 grid grid-cols-1 gap-x-5 gap-y-2.5 sm:grid-cols-2">
+            {features.map((feature, index) => (
+              <div key={index} className="feature-item font-thai text-[13px]">
+                <span className="feature-check">
+                  <Check className="h-3 w-3" strokeWidth={3} />
                 </span>
+                <span>{feature}</span>
               </div>
-              <p className="font-thai text-[13px] leading-6 text-foreground/75">{pimNote}</p>
+            ))}
+          </div>
+
+          <div className="pim-note mb-5">
+            <div className="flex items-start gap-3">
+              <div
+                className="pim-note-avatar"
+                style={{ backgroundImage: "url('/pim-beach.jpg')" }}
+                aria-hidden
+              />
+              <div className="min-w-0 flex-1">
+                <div className="mb-1 flex items-center gap-1.5">
+                  <Quote className="h-3 w-3 text-secondary" />
+                  <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-secondary">Pim's note</span>
+                </div>
+                <p className="font-thai text-[13px] leading-6 text-foreground/75">{pimNote}</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="mb-4 flex flex-wrap gap-1.5">
-          {paymentMethods.map((method) => (
-            <PaymentIcon key={method} type={method} />
-          ))}
-        </div>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex flex-wrap gap-1.5">
+              {paymentMethods.map((method) => (
+                <PaymentIcon key={method} type={method} />
+              ))}
+            </div>
 
-        <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-cta w-full font-thai"
-        >
-          <span>{buttonText}</span>
-          <ExternalLink className="h-4 w-4" />
-        </a>
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-cta min-w-[180px] font-thai"
+            >
+              <span>{buttonText}</span>
+              <ExternalLink className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
       </div>
     </article>
   );
