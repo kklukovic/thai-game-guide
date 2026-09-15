@@ -7,7 +7,7 @@ const PimStory = () => (
     <div className="pim-editorial-card">
       <div
         className="pim-editorial-photo"
-        style={{ backgroundImage: "linear-gradient(180deg, transparent 45%, rgba(28,19,28,.42)), url('/pim-beach.png')" }}
+        style={{ backgroundImage: "linear-gradient(180deg, transparent 45%, rgba(28,19,28,.42)), url('/pim-beach.jpg')" }}
         role="img"
         aria-label="Pim on holiday"
       />
