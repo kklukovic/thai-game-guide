@@ -2,92 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Prompt:wght@400;500;600;700;800&display=swap');
-
-/* Casino Affiliate Portal - Premium Editorial Light Theme */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Prompt:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    /* Soft warm off-white background */
-    --background: 40 30% 98%;
-    --foreground: 222 35% 12%;
+    --background: 42 22% 98%;
+    --foreground: 220 24% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 35% 12%;
+    --card-foreground: 220 24% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 35% 12%;
+    --popover-foreground: 220 24% 12%;
 
-    /* Rich green CTA */
-    --primary: 152 65% 38%;
+    --primary: 155 58% 34%;
     --primary-foreground: 0 0% 100%;
 
-    /* Warm amber/gold */
-    --secondary: 38 92% 50%;
-    --secondary-foreground: 222 35% 12%;
+    --secondary: 37 88% 48%;
+    --secondary-foreground: 220 24% 12%;
 
-    --muted: 36 20% 95%;
-    --muted-foreground: 220 10% 42%;
+    --muted: 40 14% 95%;
+    --muted-foreground: 218 9% 45%;
 
-    --accent: 38 92% 50%;
-    --accent-foreground: 222 35% 12%;
+    --accent: 37 88% 48%;
+    --accent-foreground: 220 24% 12%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 30 15% 90%;
-    --input: 30 15% 90%;
-    --ring: 152 65% 38%;
+    --border: 36 12% 88%;
+    --input: 36 12% 88%;
+    --ring: 155 58% 34%;
 
-    --radius: 1.25rem;
+    --radius: 1rem;
 
-    /* Custom premium tokens */
-    --gradient-cta: linear-gradient(135deg, hsl(152 65% 42%), hsl(152 70% 32%));
-    --gradient-gold: linear-gradient(135deg, hsl(42 95% 55%), hsl(32 90% 48%));
-    --gradient-hero: radial-gradient(ellipse at top, hsl(38 60% 95%) 0%, hsl(40 30% 98%) 60%);
-    --shadow-card: 0 1px 2px hsl(220 15% 80% / 0.08), 0 4px 16px -6px hsl(220 15% 60% / 0.12);
-    --shadow-card-hover: 0 4px 12px hsl(220 15% 70% / 0.12), 0 16px 40px -12px hsl(220 15% 50% / 0.18);
-    --shadow-cta: 0 4px 14px -2px hsl(152 65% 38% / 0.35);
-    --shadow-cta-hover: 0 8px 22px -4px hsl(152 65% 38% / 0.5);
-    --shadow-featured: 0 2px 4px hsl(38 92% 50% / 0.08), 0 12px 36px -10px hsl(38 92% 50% / 0.22);
+    --gradient-cta: linear-gradient(135deg, hsl(155 58% 38%), hsl(155 61% 30%));
+    --gradient-gold: linear-gradient(135deg, hsl(42 92% 58%), hsl(35 86% 51%));
+    --gradient-hero:
+      radial-gradient(circle at 50% -10%, hsl(39 65% 93% / 0.85), transparent 42%),
+      linear-gradient(180deg, hsl(42 22% 99%) 0%, hsl(42 22% 98%) 100%);
 
-    /* Label colors - more restrained */
-    --label-local: 152 60% 40%;
-    --label-vip: 38 92% 48%;
-    --label-crypto: 28 90% 50%;
-    --label-hot: 12 80% 55%;
-    --label-new: 280 55% 52%;
+    --shadow-card: 0 1px 2px hsl(220 16% 20% / 0.03), 0 8px 26px -18px hsl(220 18% 18% / 0.20);
+    --shadow-card-hover: 0 2px 5px hsl(220 16% 20% / 0.05), 0 18px 44px -24px hsl(220 18% 18% / 0.26);
+    --shadow-cta: 0 8px 18px -10px hsl(155 58% 32% / 0.65);
+    --shadow-cta-hover: 0 12px 26px -11px hsl(155 58% 32% / 0.72);
+    --shadow-featured: 0 2px 5px hsl(36 90% 50% / 0.07), 0 16px 38px -24px hsl(36 80% 45% / 0.28);
 
     --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 222 35% 12%;
-    --sidebar-primary: 152 65% 38%;
+    --sidebar-foreground: 220 24% 12%;
+    --sidebar-primary: 155 58% 34%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 36 20% 95%;
-    --sidebar-accent-foreground: 222 35% 12%;
-    --sidebar-border: 30 15% 90%;
-    --sidebar-ring: 152 65% 38%;
+    --sidebar-accent: 40 14% 95%;
+    --sidebar-accent-foreground: 220 24% 12%;
+    --sidebar-border: 36 12% 88%;
+    --sidebar-ring: 155 58% 34%;
   }
 
   .dark {
-    --background: 222 35% 7%;
-    --foreground: 40 20% 96%;
-    --card: 222 35% 10%;
-    --card-foreground: 40 20% 96%;
-    --popover: 222 35% 10%;
-    --popover-foreground: 40 20% 96%;
-    --primary: 152 65% 45%;
+    --background: 220 24% 7%;
+    --foreground: 40 14% 96%;
+    --card: 220 22% 10%;
+    --card-foreground: 40 14% 96%;
+    --popover: 220 22% 10%;
+    --popover-foreground: 40 14% 96%;
+    --primary: 155 55% 45%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 38 92% 55%;
-    --secondary-foreground: 222 35% 12%;
-    --muted: 222 25% 16%;
-    --muted-foreground: 215 15% 60%;
-    --accent: 38 92% 55%;
-    --accent-foreground: 222 35% 7%;
+    --secondary: 37 90% 56%;
+    --secondary-foreground: 220 24% 12%;
+    --muted: 220 18% 15%;
+    --muted-foreground: 218 10% 64%;
+    --accent: 37 90% 56%;
+    --accent-foreground: 220 24% 8%;
     --destructive: 0 62% 35%;
-    --destructive-foreground: 40 20% 96%;
-    --border: 222 25% 18%;
-    --input: 222 25% 18%;
-    --ring: 152 65% 45%;
+    --destructive-foreground: 40 14% 96%;
+    --border: 220 18% 18%;
+    --input: 220 18% 18%;
+    --ring: 155 55% 45%;
   }
 }
 
@@ -96,11 +86,19 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Prompt', 'IBM Plex Sans Thai', 'Inter', sans-serif;
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(circle at 12% 0%, hsl(155 35% 94% / 0.34), transparent 28%),
+      radial-gradient(circle at 88% 8%, hsl(38 70% 94% / 0.34), transparent 26%);
+    background-attachment: fixed;
   }
 
   .font-thai {
@@ -121,73 +119,144 @@
     background: var(--gradient-hero);
   }
 
-  .shadow-card {
-    box-shadow: var(--shadow-card);
+  .hero-grid {
+    opacity: 0.38;
+    background-image:
+      linear-gradient(to right, hsl(220 15% 20% / 0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(220 15% 20% / 0.035) 1px, transparent 1px);
+    background-size: 32px 32px;
+    mask-image: linear-gradient(to bottom, black, transparent 78%);
   }
 
-  .text-gradient-gold {
-    background: var(--gradient-gold);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .hero-eyebrow {
+    @apply mx-auto mb-4 inline-flex items-center gap-2 rounded-full border bg-white/75 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground backdrop-blur;
+    box-shadow: 0 1px 2px hsl(220 16% 20% / 0.03);
   }
 
-  /* Refined badges - softer tinted pills */
-  .badge-rank {
-    background: linear-gradient(135deg, hsl(42 95% 92%), hsl(38 90% 86%));
-    color: hsl(28 80% 32%);
-    border: 1px solid hsl(38 80% 80%);
+  .hero-eyebrow-dot {
+    @apply h-1.5 w-1.5 rounded-full bg-primary;
+    box-shadow: 0 0 0 4px hsl(155 58% 34% / 0.10);
+  }
+
+  .badge-rank,
+  .badge-vip {
+    background: hsl(40 85% 94%);
+    color: hsl(32 70% 34%);
+    border: 1px solid hsl(39 56% 84%);
   }
 
   .badge-local {
-    background: hsl(152 60% 94%);
-    color: hsl(152 65% 28%);
-    border: 1px solid hsl(152 50% 82%);
-  }
-
-  .badge-vip {
-    background: linear-gradient(135deg, hsl(42 95% 92%), hsl(38 90% 86%));
-    color: hsl(28 80% 32%);
-    border: 1px solid hsl(38 80% 80%);
+    background: hsl(155 42% 95%);
+    color: hsl(155 54% 28%);
+    border: 1px solid hsl(155 32% 84%);
   }
 
   .badge-crypto {
-    background: hsl(28 90% 94%);
-    color: hsl(22 80% 35%);
-    border: 1px solid hsl(28 80% 82%);
+    background: hsl(28 72% 95%);
+    color: hsl(24 68% 35%);
+    border: 1px solid hsl(28 48% 84%);
   }
 
   .badge-hot {
-    background: hsl(12 85% 95%);
-    color: hsl(12 75% 40%);
-    border: 1px solid hsl(12 70% 82%);
+    background: hsl(10 75% 96%);
+    color: hsl(10 65% 40%);
+    border: 1px solid hsl(10 50% 86%);
   }
 
   .badge-new {
-    background: hsl(280 60% 95%);
-    color: hsl(280 55% 38%);
-    border: 1px solid hsl(280 50% 84%);
+    background: hsl(278 55% 96%);
+    color: hsl(278 48% 40%);
+    border: 1px solid hsl(278 38% 86%);
+  }
+
+  .status-badge {
+    @apply inline-flex flex-shrink-0 items-center gap-1 rounded-full px-2.5 py-1 text-[10px] font-semibold;
   }
 
   .badge-pim {
-    background: var(--gradient-gold);
-    color: hsl(28 80% 25%);
+    background: linear-gradient(135deg, hsl(42 92% 63%), hsl(34 88% 54%));
+    color: hsl(28 72% 23%);
+    box-shadow: inset 0 0 0 1px hsl(34 55% 45% / 0.14);
   }
 
-  /* Premium CTA */
+  .casino-card,
+  .casino-card-featured,
+  .casino-card-event {
+    @apply relative overflow-hidden rounded-[22px] border bg-card transition-all duration-300;
+    box-shadow: var(--shadow-card);
+  }
+
+  .casino-card:hover,
+  .casino-card-featured:hover,
+  .casino-card-event:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .casino-card-featured {
+    border-color: hsl(39 55% 82%);
+    box-shadow: var(--shadow-featured);
+  }
+
+  .casino-card-event {
+    border-color: hsl(12 38% 84%);
+  }
+
+  .featured-line {
+    @apply absolute inset-x-0 top-0 h-[3px];
+    background: linear-gradient(90deg, hsl(41 92% 58%), hsl(35 86% 52%), hsl(155 58% 38%));
+  }
+
+  .event-strip {
+    @apply border-b px-5 py-2.5 text-white;
+    background: linear-gradient(90deg, hsl(10 68% 52%), hsl(18 76% 52%));
+    border-color: hsl(10 55% 46% / 0.25);
+  }
+
+  .casino-logo {
+    @apply relative flex h-[58px] w-[58px] flex-shrink-0 items-center justify-center overflow-hidden rounded-2xl border;
+    border-color: hsl(36 12% 88%);
+    box-shadow: 0 1px 2px hsl(220 16% 20% / 0.04), inset 0 0 0 1px hsl(0 0% 100% / 0.34);
+  }
+
+  .rank-number {
+    @apply inline-flex h-6 min-w-6 items-center justify-center rounded-lg bg-foreground px-1.5 font-mono text-[10px] font-bold tracking-wide text-background;
+  }
+
+  .bonus-panel {
+    @apply rounded-2xl border px-4 py-3.5;
+    background: hsl(155 34% 97%);
+    border-color: hsl(155 24% 87%);
+  }
+
+  .feature-item {
+    @apply flex items-start gap-2.5 leading-snug text-foreground/80;
+  }
+
+  .feature-check {
+    @apply mt-0.5 flex h-[18px] w-[18px] flex-shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary;
+  }
+
+  .pim-note {
+    @apply relative rounded-2xl border px-4 py-3.5;
+    background: hsl(40 50% 98%);
+    border-color: hsl(39 30% 88%);
+  }
+
+  .payment-chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border bg-muted/45 px-2.5 py-1 text-[11px] font-medium text-muted-foreground;
+  }
+
   .btn-cta {
-    @apply relative overflow-hidden font-semibold rounded-xl transition-all duration-200 text-base flex items-center justify-center gap-2;
-    height: 52px;
+    @apply relative flex h-[52px] items-center justify-center gap-2 overflow-hidden rounded-[14px] text-[15px] font-semibold text-white transition-all duration-200;
     background: var(--gradient-cta);
-    color: hsl(0 0% 100%);
     box-shadow: var(--shadow-cta);
-    letter-spacing: 0.01em;
   }
 
-  .btn-cta::after {
+  .btn-cta::before {
     content: '';
     @apply absolute inset-0 opacity-0 transition-opacity duration-200;
-    background: linear-gradient(135deg, hsl(0 0% 100% / 0.12), transparent);
+    background: linear-gradient(120deg, transparent 10%, hsl(0 0% 100% / 0.12) 48%, transparent 78%);
   }
 
   .btn-cta:hover {
@@ -195,7 +264,7 @@
     box-shadow: var(--shadow-cta-hover);
   }
 
-  .btn-cta:hover::after {
+  .btn-cta:hover::before {
     @apply opacity-100;
   }
 
@@ -203,52 +272,12 @@
     transform: translateY(0);
   }
 
-  /* Premium cards */
-  .casino-card {
-    @apply relative rounded-3xl transition-all duration-300 bg-card border border-border;
-    box-shadow: var(--shadow-card);
-  }
-
-  .casino-card:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-card-hover);
-  }
-
-  .casino-card-featured {
-    @apply casino-card;
-    border: 1px solid hsl(38 80% 78%);
-    box-shadow: var(--shadow-featured);
-    background:
-      linear-gradient(180deg, hsl(42 80% 98%) 0%, hsl(0 0% 100%) 40%);
-  }
-
-  .casino-card-event {
-    @apply casino-card;
-    border: 1px solid hsl(12 70% 82%);
-  }
-
-  /* Editorial Pim's note */
-  .pim-note {
-    @apply relative rounded-2xl px-4 py-3 border;
-    background: linear-gradient(135deg, hsl(42 80% 97%) 0%, hsl(38 70% 95%) 100%);
-    border-color: hsl(38 60% 88%);
-  }
-
-  /* Bonus highlight panel */
-  .bonus-panel {
-    @apply rounded-2xl px-4 py-3 border;
-    background: linear-gradient(135deg, hsl(152 50% 96%) 0%, hsl(152 40% 94%) 100%);
-    border-color: hsl(152 40% 86%);
-  }
-
-  /* Feature item */
-  .feature-item {
-    @apply flex items-start gap-2 text-sm text-foreground/80 leading-snug;
-  }
-
-  /* Trust pill */
   .trust-pill {
-    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border;
-    box-shadow: 0 1px 2px hsl(220 15% 80% / 0.08);
+    @apply mx-auto inline-flex items-center gap-2.5 rounded-full border bg-white/80 px-4 py-2 backdrop-blur;
+    box-shadow: 0 1px 2px hsl(220 16% 20% / 0.03), 0 8px 18px -14px hsl(220 16% 20% / 0.22);
+  }
+
+  .trust-icon {
+    @apply flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-primary;
   }
 }

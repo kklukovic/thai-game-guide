@@ -31,17 +31,18 @@ const badgeStyles = {
 
 const PaymentIcon = ({ type }: { type: "promptpay" | "bank" | "crypto" }) => {
   const icons = {
-    promptpay: <Wallet className="w-3.5 h-3.5" />,
-    bank: <Building2 className="w-3.5 h-3.5" />,
-    crypto: <Bitcoin className="w-3.5 h-3.5" />,
+    promptpay: <Wallet className="h-3.5 w-3.5" />,
+    bank: <Building2 className="h-3.5 w-3.5" />,
+    crypto: <Bitcoin className="h-3.5 w-3.5" />,
   };
   const labels = {
     promptpay: "PromptPay",
     bank: "Bank Transfer",
     crypto: "Crypto",
   };
+
   return (
-    <div className="inline-flex items-center gap-1.5 text-[11px] font-medium text-muted-foreground bg-muted/70 px-2.5 py-1 rounded-full border border-border/60">
+    <div className="payment-chip">
       {icons[type]}
       <span>{labels[type]}</span>
     </div>
@@ -74,121 +75,111 @@ const CasinoCard = ({
       : "casino-card";
 
   return (
-    <div className={cardClass}>
-      {/* Event Banner */}
+    <article className={cardClass}>
+      {isFeatured && <div className="featured-line" aria-hidden />}
+
       {isEvent && eventTitle && (
-        <div className="rounded-t-3xl px-5 py-2.5 bg-gradient-to-r from-[hsl(12_75%_55%)] to-[hsl(22_85%_55%)] text-white">
-          <div className="flex items-center gap-2 justify-center flex-wrap">
-            <Flame className="w-4 h-4" />
-            <span className="font-semibold text-[13px] font-thai">{eventTitle}</span>
+        <div className="event-strip">
+          <div className="flex items-center justify-center gap-2">
+            <Flame className="h-4 w-4" />
+            <span className="font-thai text-[13px] font-semibold">{eventTitle}</span>
           </div>
           {eventPeriod && (
-            <p className="text-[11px] text-center mt-0.5 opacity-90 font-thai">{eventPeriod}</p>
+            <p className="mt-0.5 text-center font-thai text-[11px] opacity-80">{eventPeriod}</p>
           )}
         </div>
       )}
 
-      {/* Featured ribbon */}
-      {isFeatured && (
-        <div className="absolute -top-3 left-5 px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase gradient-gold text-foreground shadow-md">
-          ⭐ Top Pick
-        </div>
-      )}
-
       <div
-        className="p-5 md:p-6 animate-fade-in motion-reduce:animate-none"
-        style={{ animationDelay: `${rank * 100}ms` }}
+        className="animate-fade-in p-5 motion-reduce:animate-none md:p-6"
+        style={{ animationDelay: `${rank * 90}ms` }}
       >
-        {/* Top row: logo + rank + name + badge */}
-        <div className="flex items-start justify-between gap-3 mb-4">
-          <div className="flex items-center gap-3 min-w-0">
+        <div className="mb-5 flex items-start justify-between gap-3">
+          <div className="flex min-w-0 items-center gap-3.5">
             <div
-              className={`relative w-14 h-14 rounded-2xl flex items-center justify-center overflow-hidden flex-shrink-0 border border-border ${
-                logoBgDark ? "bg-foreground" : "bg-muted/40"
-              }`}
+              className={`casino-logo ${logoBgDark ? "bg-foreground" : "bg-white"}`}
             >
-              <img src={logo} alt={`${name} logo`} className="w-full h-full object-contain p-1.5" />
+              <img src={logo} alt={`${name} logo`} className="h-full w-full object-contain p-1.5" />
             </div>
+
             <div className="min-w-0">
-              <div className="flex items-center gap-2 mb-0.5">
-                <div className="inline-flex items-center justify-center min-w-[22px] h-[22px] px-1.5 rounded-md bg-foreground text-background font-bold text-[11px]">
-                  #{rank}
-                </div>
-                <h3 className="text-lg md:text-xl font-bold text-foreground tracking-tight truncate">
+              <div className="mb-1 flex items-center gap-2.5">
+                <span className="rank-number">{String(rank).padStart(2, "0")}</span>
+                <h3 className="truncate text-xl font-bold tracking-[-0.02em] text-foreground md:text-[22px]">
                   {name}
                 </h3>
               </div>
-              <p className="text-[12px] text-muted-foreground font-medium">{tagline}</p>
+              <p className="text-[12px] font-medium tracking-wide text-muted-foreground">{tagline}</p>
             </div>
           </div>
 
-          <span
-            className={`${badgeStyles[badgeType]} px-2.5 py-1 rounded-full text-[10px] font-semibold whitespace-nowrap flex items-center gap-1 flex-shrink-0`}
-          >
-            {badgeType === "event" && <Flame className="w-3 h-3" />}
-            {badgeType === "new" && <Sparkles className="w-3 h-3" />}
+          <span className={`${badgeStyles[badgeType]} status-badge`}>
+            {badgeType === "event" && <Flame className="h-3 w-3" />}
+            {badgeType === "new" && <Sparkles className="h-3 w-3" />}
             <span className="font-thai">{badge}</span>
           </span>
         </div>
 
-        {/* Bonus */}
-        <div className="bonus-panel mb-3.5">
-          <div className="flex items-center gap-2 mb-0.5">
-            <Gift className="w-3.5 h-3.5 text-primary" />
-            <span className="text-[10px] font-bold text-primary uppercase tracking-wider">Bonus</span>
+        {isFeatured && (
+          <div className="mb-3 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-amber-700">
+            <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
+            Pim's Top Pick
           </div>
-          <p className="font-thai font-semibold text-foreground text-[14px] leading-snug">{bonusInfo}</p>
+        )}
+
+        <div className="bonus-panel mb-4">
+          <div className="mb-1 flex items-center gap-2">
+            <Gift className="h-3.5 w-3.5 text-primary" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-primary">Current offer</span>
+          </div>
+          <p className="font-thai text-[14px] font-semibold leading-6 text-foreground">{bonusInfo}</p>
         </div>
 
-        {/* Features - 2-col on desktop */}
-        <div className="mb-3.5 grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5">
+        <div className="mb-4 grid grid-cols-1 gap-x-5 gap-y-2 sm:grid-cols-2">
           {features.map((feature, index) => (
             <div key={index} className="feature-item font-thai text-[13px]">
-              <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" strokeWidth={3} />
+              <span className="feature-check">
+                <Check className="h-3 w-3" strokeWidth={3} />
+              </span>
               <span>{feature}</span>
             </div>
           ))}
         </div>
 
-        {/* Pim's Note - editorial */}
         <div className="pim-note mb-4">
-          <div className="flex items-start gap-2.5">
-            <div className="w-7 h-7 rounded-full badge-pim flex items-center justify-center text-[10px] font-bold flex-shrink-0 mt-0.5 font-thai">
+          <div className="flex items-start gap-3">
+            <div className="badge-pim mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full font-thai text-[10px] font-bold">
               พิม
             </div>
             <div className="min-w-0 flex-1">
-              <div className="flex items-center gap-1.5 mb-0.5">
-                <Quote className="w-3 h-3 text-secondary" />
-                <span className="text-[10px] font-bold text-secondary uppercase tracking-wider">
-                  Pim's Note
+              <div className="mb-1 flex items-center gap-1.5">
+                <Quote className="h-3 w-3 text-secondary" />
+                <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-secondary">
+                  Pim's note
                 </span>
               </div>
-              <p className="font-thai text-[13px] text-foreground/75 italic leading-relaxed">
-                {pimNote}
-              </p>
+              <p className="font-thai text-[13px] leading-6 text-foreground/75">{pimNote}</p>
             </div>
           </div>
         </div>
 
-        {/* Payments */}
-        <div className="flex flex-wrap gap-1.5 mb-4">
+        <div className="mb-4 flex flex-wrap gap-1.5">
           {paymentMethods.map((method) => (
             <PaymentIcon key={method} type={method} />
           ))}
         </div>
 
-        {/* CTA */}
         <a
           href={link}
           target="_blank"
           rel="noopener noreferrer"
           className="btn-cta w-full font-thai"
         >
-          {buttonText}
-          <ExternalLink className="w-4 h-4" />
+          <span>{buttonText}</span>
+          <ExternalLink className="h-4 w-4" />
         </a>
       </div>
-    </div>
+    </article>
   );
 };
 

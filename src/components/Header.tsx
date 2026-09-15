@@ -1,51 +1,40 @@
-import { Shield, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
 const Header = () => {
   return (
-    <header className="relative text-center pt-8 pb-10 md:pt-12 md:pb-14 px-4 overflow-hidden">
-      {/* Subtle background glow */}
+    <header className="relative overflow-hidden px-4 pb-10 pt-10 text-center md:pb-14 md:pt-14">
       <div className="absolute inset-0 -z-10 gradient-hero" aria-hidden />
-      <div
-        className="absolute left-1/2 top-0 -translate-x-1/2 w-[600px] h-[300px] -z-10 opacity-40 blur-3xl"
-        style={{
-          background:
-            "radial-gradient(ellipse, hsl(38 90% 80% / 0.5) 0%, transparent 70%)",
-        }}
-        aria-hidden
-      />
+      <div className="hero-grid absolute inset-0 -z-10" aria-hidden />
 
-      {/* Eyebrow */}
       <div
-        className="inline-block mb-4 px-3 py-1 rounded-full bg-secondary/10 border border-secondary/20 opacity-0 animate-fade-in"
+        className="hero-eyebrow opacity-0 animate-fade-in"
         style={{ animationDelay: "60ms" }}
       >
-        <span className="font-thai text-xs font-semibold text-secondary tracking-wide uppercase">
-          Editor's Pick · 2026
-        </span>
+        <span className="hero-eyebrow-dot" />
+        <span>Editor's Pick · 2026</span>
       </div>
 
-      {/* Headline */}
       <h1
-        className="font-thai text-[26px] sm:text-3xl md:text-4xl lg:text-[42px] font-bold leading-[1.2] tracking-tight mb-4 text-foreground opacity-0 animate-fade-in max-w-3xl mx-auto"
+        className="mx-auto mb-4 max-w-3xl font-thai text-[28px] font-bold leading-[1.22] tracking-[-0.025em] text-foreground opacity-0 animate-fade-in sm:text-3xl md:text-[40px] lg:text-[44px]"
         style={{ animationDelay: "120ms" }}
       >
-        5 เว็บคาสิโนออนไลน์ที่เชื่อถือได้มากที่สุดในไทย 2026
+        5 คาสิโนออนไลน์ที่เชื่อถือได้มากที่สุดในไทย 2026
       </h1>
 
-      {/* Subheadline */}
       <p
-        className="font-thai text-base md:text-lg text-muted-foreground max-w-xl mx-auto mb-7 leading-relaxed opacity-0 animate-fade-in"
+        className="mx-auto mb-7 max-w-xl font-thai text-[15px] leading-7 text-muted-foreground opacity-0 animate-fade-in md:text-[17px]"
         style={{ animationDelay: "200ms" }}
       >
         เจาะลึกเว็บตรง ไม่ผ่านเอเย่นต์ มั่นใจ 100% ตรวจสอบโดยพิม
       </p>
 
-      {/* Trust Pill */}
       <div
         className="trust-pill opacity-0 animate-fade-in"
         style={{ animationDelay: "280ms" }}
       >
-        <CheckCircle2 className="w-4 h-4 text-primary" />
+        <span className="trust-icon">
+          <CheckCircle2 className="h-4 w-4" />
+        </span>
         <span className="font-thai text-sm font-medium text-foreground">
           ตรวจสอบและยืนยันโดยพิมแล้ว
         </span>
