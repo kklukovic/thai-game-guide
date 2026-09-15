@@ -147,7 +147,7 @@ const CasinoCard = ({
             <div className="flex items-start gap-3">
               <div
                 className="pim-note-avatar"
-                style={{ backgroundImage: "url('/pim-beach.jpg')" }}
+                style={{ backgroundImage: "url('/pim-beach.png')" }}
                 aria-hidden
               />
               <div className="min-w-0 flex-1">
