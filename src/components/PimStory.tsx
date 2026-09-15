@@ -50,9 +50,9 @@ const PimStory = () => (
       </div>
       <div
         className="telegram-photo"
-        style={{ backgroundImage: "linear-gradient(180deg, transparent 55%, rgba(7,22,39,.26)), url('/pim-balcony.png')" }}
+        style={{ backgroundImage: "linear-gradient(180deg, transparent 55%, rgba(7,22,39,.28)), url('/pim-resort.jpg')" }}
         role="img"
-        aria-label="Pim relaxing on a balcony"
+        aria-label="Pim at a seaside resort"
       />
     </div>
   </section>
