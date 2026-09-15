@@ -1,43 +1,59 @@
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Sparkles } from "lucide-react";
 
 const Header = () => {
   return (
-    <header className="relative overflow-hidden px-4 pb-10 pt-10 text-center md:pb-14 md:pt-14">
-      <div className="absolute inset-0 -z-10 gradient-hero" aria-hidden />
-      <div className="hero-grid absolute inset-0 -z-10" aria-hidden />
+    <header id="top" className="relative overflow-hidden pt-6 md:pt-8">
+      <div className="hero-shell">
+        <div className="hero-copy-block">
+          <div className="hero-kicker">
+            <Sparkles className="h-3.5 w-3.5" />
+            <span>Editor's Pick · 2026</span>
+          </div>
 
-      <div
-        className="hero-eyebrow opacity-0 animate-fade-in"
-        style={{ animationDelay: "60ms" }}
-      >
-        <span className="hero-eyebrow-dot" />
-        <span>Editor's Pick · 2026</span>
-      </div>
+          <h1 className="mt-5 max-w-3xl font-display text-[34px] font-semibold leading-[1.08] tracking-[-0.035em] text-foreground sm:text-[42px] md:text-[54px] lg:text-[62px]">
+            5 คาสิโนออนไลน์ที่เชื่อถือได้มากที่สุดในไทย 2026
+          </h1>
 
-      <h1
-        className="mx-auto mb-4 max-w-3xl font-thai text-[28px] font-bold leading-[1.22] tracking-[-0.025em] text-foreground opacity-0 animate-fade-in sm:text-3xl md:text-[40px] lg:text-[44px]"
-        style={{ animationDelay: "120ms" }}
-      >
-        5 คาสิโนออนไลน์ที่เชื่อถือได้มากที่สุดในไทย 2026
-      </h1>
+          <p className="mt-5 max-w-2xl font-thai text-[15px] leading-7 text-muted-foreground md:text-[17px] md:leading-8">
+            เจาะลึกเว็บตรง ไม่ผ่านเอเย่นต์ มั่นใจ 100% ตรวจสอบโดยพิม
+          </p>
 
-      <p
-        className="mx-auto mb-7 max-w-xl font-thai text-[15px] leading-7 text-muted-foreground opacity-0 animate-fade-in md:text-[17px]"
-        style={{ animationDelay: "200ms" }}
-      >
-        เจาะลึกเว็บตรง ไม่ผ่านเอเย่นต์ มั่นใจ 100% ตรวจสอบโดยพิม
-      </p>
+          <div className="mt-7 flex flex-wrap items-center gap-3">
+            <div className="hero-trust-pill">
+              <CheckCircle2 className="h-4 w-4" />
+              <span className="font-thai">ตรวจสอบและยืนยันโดยพิมแล้ว</span>
+            </div>
+          </div>
 
-      <div
-        className="trust-pill opacity-0 animate-fade-in"
-        style={{ animationDelay: "280ms" }}
-      >
-        <span className="trust-icon">
-          <CheckCircle2 className="h-4 w-4" />
-        </span>
-        <span className="font-thai text-sm font-medium text-foreground">
-          ตรวจสอบและยืนยันโดยพิมแล้ว
-        </span>
+          <div className="mt-8 grid max-w-xl grid-cols-3 gap-3 border-t border-border/70 pt-6">
+            <div>
+              <div className="font-display text-xl font-semibold text-foreground">5</div>
+              <div className="mt-1 font-thai text-[11px] leading-5 text-muted-foreground">รายการหลัก</div>
+            </div>
+            <div>
+              <div className="font-display text-xl font-semibold text-foreground">TH</div>
+              <div className="mt-1 font-thai text-[11px] leading-5 text-muted-foreground">ข้อมูลภาษาไทย</div>
+            </div>
+            <div>
+              <div className="font-display text-xl font-semibold text-foreground">2026</div>
+              <div className="mt-1 font-thai text-[11px] leading-5 text-muted-foreground">อัปเดตล่าสุด</div>
+            </div>
+          </div>
+        </div>
+
+        <div className="hero-photo-wrap" aria-hidden>
+          <div
+            className="hero-photo"
+            style={{
+              backgroundImage:
+                "linear-gradient(180deg, rgba(36,20,30,.02) 35%, rgba(36,20,30,.38) 100%), url('/pim-resort.jpg')",
+            }}
+          />
+          <div className="hero-photo-caption">
+            <span className="hero-photo-dot" />
+            <span className="font-thai">Pim · Thailand</span>
+          </div>
+        </div>
       </div>
     </header>
   );
