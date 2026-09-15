@@ -1,6 +1,10 @@
 import Header from "@/components/Header";
 import CasinoCard from "@/components/CasinoCard";
 import Footer from "@/components/Footer";
+import TopNav from "@/components/TopNav";
+import OfferCarousel, { type FeaturedOffer } from "@/components/OfferCarousel";
+import PimStory from "@/components/PimStory";
+import MobileDock from "@/components/MobileDock";
 import siam369Logo from "@/assets/siam369.png";
 import roll88Logo from "@/assets/roll88.png";
 import uea8Logo from "@/assets/uea8.png";
@@ -107,21 +111,66 @@ const casinos = [
   },
 ];
 
+const featuredOffers: FeaturedOffer[] = [
+  {
+    eyebrow: "Siam369",
+    title: "100% Welcome Bonus + Lucky Bonus สูงสุด 18,888 THB",
+    description: "ข้อมูลสรุปล่าสุดจากหน้ารายการของพิม พร้อมรายละเอียดหลักด้านล่าง",
+    accent: "#F2B84B",
+  },
+  {
+    eyebrow: "Roll88",
+    title: "โบนัสฝากครั้งแรก 100% สำหรับกีฬาและสล็อต",
+    description: "สลับดูข้อมูลสำคัญได้จากด้านบน แล้วเลื่อนลงเพื่อดูรายละเอียดทั้งหมดในบัตรเดียว",
+    accent: "#5FD2A4",
+  },
+  {
+    eyebrow: "12Play",
+    title: "โบนัสต้อนรับสมาชิกใหม่ สูงสุด 150%",
+    description: "อีกหนึ่งรายการที่พิมรวมไว้ในหน้าเดียวเพื่อให้เปรียบเทียบข้อมูลได้ง่ายขึ้น",
+    accent: "#EF8A6F",
+  },
+];
+
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <div className="max-w-[1120px] mx-auto px-4 sm:px-6 pb-16">
-        <Header />
+    <div className="min-h-screen bg-background pb-20 sm:pb-0">
+      <TopNav />
 
-        {/* Casino Cards List */}
-        <section className="max-w-3xl mx-auto space-y-4 md:space-y-5">
-          {casinos.map((casino) => (
-            <CasinoCard key={casino.name} {...casino} />
-          ))}
-        </section>
+      <main>
+        <div className="mx-auto max-w-[1180px] px-4 sm:px-6">
+          <Header />
 
-        <Footer />
-      </div>
+          <div className="mt-6 md:mt-8">
+            <OfferCarousel offers={featuredOffers} />
+          </div>
+
+          <section id="picks" className="pt-12 md:pt-16">
+            <div className="mb-7 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <p className="section-kicker">Pim's current list</p>
+                <h2 className="mt-2 font-display text-3xl font-semibold tracking-[-0.03em] text-foreground sm:text-4xl">
+                  รายการที่พิมรวบรวมไว้
+                </h2>
+              </div>
+              <p className="max-w-md font-thai text-[13px] leading-6 text-muted-foreground sm:text-right">
+                รายละเอียดโปรอาจเปลี่ยนได้ ควรตรวจสอบเงื่อนไขล่าสุดกับผู้ให้บริการอีกครั้ง
+              </p>
+            </div>
+
+            <div className="space-y-5 md:space-y-6">
+              {casinos.map((casino) => (
+                <CasinoCard key={casino.name} {...casino} />
+              ))}
+            </div>
+          </section>
+
+          <PimStory />
+          <Footer />
+        </div>
+      </main>
+
+      <MobileDock />
     </div>
   );
 };
