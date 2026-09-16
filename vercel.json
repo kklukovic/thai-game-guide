@@ -10,5 +10,11 @@
       "destination": "https://m.roll88b.com/en/register?cxd=35172_483733&token=35172_483733",
       "permanent": false
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ]
 }
