@@ -18,6 +18,7 @@ interface CasinoCardProps {
   eventTitle?: string;
   eventPeriod?: string;
   isFeatured?: boolean;
+  language?: "th" | "en";
 }
 
 const badgeStyles = {
@@ -67,7 +68,9 @@ const CasinoCard = ({
   eventTitle,
   eventPeriod,
   isFeatured,
+  language = "th",
 }: CasinoCardProps) => {
+  const en = language === "en";
   const cardClass = isFeatured
     ? "casino-card-featured"
     : isEvent
@@ -95,7 +98,7 @@ const CasinoCard = ({
           <div className="card-rank-number">{String(rank).padStart(2, "0")}</div>
           <div className="card-rank-line" />
           <div className="hidden -rotate-90 whitespace-nowrap text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground md:block">
-            Pim's list
+            {en ? "Pim's list" : "Pim's list"}
           </div>
         </div>
 
@@ -127,7 +130,7 @@ const CasinoCard = ({
           <div className="offer-band mb-5">
             <div className="mb-1.5 flex items-center gap-2">
               <Gift className="h-3.5 w-3.5" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.16em]">Current offer</span>
+              <span className="text-[10px] font-bold uppercase tracking-[0.16em]">{en ? "Current offer" : "โปรปัจจุบัน"}</span>
             </div>
             <p className="font-thai text-[15px] font-semibold leading-6 text-foreground">{bonusInfo}</p>
           </div>
@@ -145,15 +148,13 @@ const CasinoCard = ({
 
           <div className="pim-note mb-5">
             <div className="flex items-start gap-3">
-              <div
-                className="pim-note-avatar"
-                style={{ backgroundImage: "url('/pim-beach.jpg')" }}
-                aria-hidden
-              />
+              <div className="pim-note-avatar flex items-center justify-center bg-[#352131] font-display text-xs font-semibold text-white" aria-hidden>
+                P
+              </div>
               <div className="min-w-0 flex-1">
                 <div className="mb-1 flex items-center gap-1.5">
                   <Quote className="h-3 w-3 text-secondary" />
-                  <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-secondary">Pim's note</span>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-secondary">{en ? "Pim's note" : "โน้ตจากพิม"}</span>
                 </div>
                 <p className="font-thai text-[13px] leading-6 text-foreground/75">{pimNote}</p>
               </div>
