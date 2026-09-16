@@ -10,10 +10,12 @@ export type FeaturedOffer = {
 
 interface OfferCarouselProps {
   offers: FeaturedOffer[];
+  language?: "th" | "en";
 }
 
-const OfferCarousel = ({ offers }: OfferCarouselProps) => {
+const OfferCarousel = ({ offers, language = "th" }: OfferCarouselProps) => {
   const [active, setActive] = useState(0);
+  const en = language === "en";
 
   useEffect(() => {
     if (offers.length < 2) return;
@@ -25,12 +27,11 @@ const OfferCarousel = ({ offers }: OfferCarouselProps) => {
 
   if (!offers.length) return null;
 
-  const goPrevious = () =>
-    setActive((current) => (current - 1 + offers.length) % offers.length);
+  const goPrevious = () => setActive((current) => (current - 1 + offers.length) % offers.length);
   const goNext = () => setActive((current) => (current + 1) % offers.length);
 
   return (
-    <section className="feature-rotator" aria-label="Pim's featured picks">
+    <section className="feature-rotator" aria-label={en ? "Pim's featured picks" : "รายการเด่นของพิม"}>
       <div className="feature-rotator-glow" aria-hidden />
       <div className="relative z-10 grid gap-7 md:grid-cols-[1fr_auto] md:items-end">
         <div className="min-w-0">
@@ -38,7 +39,7 @@ const OfferCarousel = ({ offers }: OfferCarouselProps) => {
             <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-amber-100 text-amber-700">
               <Sparkles className="h-3.5 w-3.5" />
             </span>
-            <span className="font-thai">อัปเดตจากพิม</span>
+            <span className="font-thai">{en ? "Pim's update" : "อัปเดตจากพิม"}</span>
           </div>
 
           <div key={active} className="animate-fade-in">
@@ -62,25 +63,25 @@ const OfferCarousel = ({ offers }: OfferCarouselProps) => {
             href="#picks"
             className="inline-flex h-11 items-center gap-2 rounded-full bg-white px-4 font-thai text-[13px] font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-amber-50"
           >
-            ดูรายการด้านล่าง
+            {en ? "See the list below" : "ดูรายการด้านล่าง"}
             <ArrowDown className="h-4 w-4" />
           </a>
-          <button type="button" onClick={goPrevious} className="rotator-icon-button" aria-label="Previous offer">
+          <button type="button" onClick={goPrevious} className="rotator-icon-button" aria-label={en ? "Previous offer" : "โปรก่อนหน้า"}>
             <ChevronLeft className="h-4 w-4" />
           </button>
-          <button type="button" onClick={goNext} className="rotator-icon-button" aria-label="Next offer">
+          <button type="button" onClick={goNext} className="rotator-icon-button" aria-label={en ? "Next offer" : "โปรถัดไป"}>
             <ChevronRight className="h-4 w-4" />
           </button>
         </div>
       </div>
 
-      <div className="relative z-10 mt-7 flex gap-2" aria-label="Offer slides">
+      <div className="relative z-10 mt-7 flex gap-2" aria-label={en ? "Offer slides" : "สไลด์โปร"}>
         {offers.map((offer, index) => (
           <button
             key={offer.eyebrow}
             type="button"
             onClick={() => setActive(index)}
-            aria-label={`Show ${offer.eyebrow}`}
+            aria-label={`${en ? "Show" : "แสดง"} ${offer.eyebrow}`}
             className={`h-1.5 rounded-full transition-all duration-300 ${index === active ? "w-10 bg-amber-300" : "w-4 bg-white/25 hover:bg-white/40"}`}
           />
         ))}
