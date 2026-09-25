@@ -18,6 +18,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index language="th" />} />
           <Route path="/en" element={<Index language="en" />} />
+          <Route path="/yuugado" element={<YuugadoRedirect />} />
+          <Route path="/yuugado/" element={<YuugadoRedirect />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
